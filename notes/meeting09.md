@@ -2,13 +2,55 @@
 tags: core dev call, meeting notes
 ---
 
-Agenda https://notes.status.im/sSwbEGg9TEWfxpOnLMPE_Q
+# Status Devs Meeting 9, Agenda
+Meeting Date/Time: Monday 2018-12-17 at 13:00 UTC (new time)
+Meeting Duration 1.5 hours
+YouTube Live Stream Link https://www.youtube.com/c/Statusim/live
+
+## Agenda
+### 1. Updates (<15m)
+
+Swarms:
+SNT Utility
+- 316-core-network-incentivization (research)
+- 313-sticker-market (research)
+- 314-tribute-to-talk (research)
+- 317-dapp-store (research)
+- TODO: Teller Network
+
+Essential
+- 315-core-improvements (research) - same as Patient Zero?
+- 311-protocol (research)
+- TODO: DAO
+- 312-janitors (research)
+
+Teams (fallback for responsibility)
+- 310-core (research)
+- 306-core-browser (research)
+- 304-core-chat (research)
+- 318-desktop (research)
+- Wallet in review
+- Keycard missing
+
+- Research/Nimbus
+- Infra
+- Security
+- QA
+- Other
+
+### 2. Security checklist (security week that never happened): https://hackmd.io/w05YbPzJSHG1lnS5fSS4Eg
+
+### 3. privacy/security trade offs with using Google Safe browsing
+
+
+## Notes
+
 Swarms https://github.com/status-im/swarms
 Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
 
-# Dev Call Notes
+### Dev Call Notes
 
-## Igor
+### Igor
 - not much happeneing today
 - heavily in research phase on how to incentivizee new use cases
 - set up deadline to finish by end of jan
@@ -19,16 +61,16 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - andrea
 - https://github.com/status-im/swarms/blob/master/ideas/316-core-networking.md
 
-## Sticker Market - Julien
+### Sticker Market - Julien
 - pretty much the same
 - had a call earlier to today to kickstart conversation
 - plan to have one week research but extend
 - just started, not much to share
 - https://github.com/status-im/swarms/blob/master/ideas/313-sticker-market.md
 
-## Tribute to talk - Eric
+### Tribute to talk - Eric
 - Chat team update
-- plan to TtT 
+- plan to TtT
 - right now we have to check contracts and designs
 - working on list of top priorities
     - plan to work on them for MVP
@@ -44,13 +86,13 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - no, more like design of notification of mention
     - replies to posts, people saying your name, etc
 - [Julien] are youp lanning to send image as part of message payload or external resource
-    - external resource like gifycat 
+    - external resource like gifycat
     - extension comes with warning of metadata guarantees
 - [Ricardo] wants to join discussions on TtT
 - [Oskar] put meetings from swarms in Status Calendar
 - https://github.com/status-im/swarms/blob/master/ideas/314-tribute-to-talk.md
 
-## Dapp Store - Julien
+### Dapp Store - Julien
 - Not much, hasn't started yet
 - Andy should be leading this
 - Dapp store implemented as a dapp
@@ -60,10 +102,10 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - [Jarrad] pretty sure no contracts yet
 - https://github.com/status-im/swarms/blob/master/ideas/317-dapps-store.md
 
-## Teller Network - 
+### Teller Network -
 - No one around to talk about it
 
-## Core Improvements - Igor
+### Core Improvements - Igor
 - in general, a lot of work, but it's stuff we were working on before
 - integrate and fix bugs from mailservers
     - reasons why you would receive PN with no messsage
@@ -74,8 +116,8 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - he had a list of 12 or so items, there are only 2 left
     - today we should merge 2 or 3 PRs and only a few more things to work on
 
-## Protocol Update - Oskar
-- data sync layer discussion 
+### Protocol Update - Oskar
+- data sync layer discussion
     - https://discuss.status.im/t/introducing-a-data-sync-layer/864
     - general idea is separate data sync layer to make easier if we move away from whisper
     - should go through post
@@ -86,22 +128,22 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
 - [Ricardo] questions on state of mailservers
     - how do you define the state to sync on?
     - [Adam] current state is looking at what IDs those mailservers have
-        - there is a crosscheck, if some is missing, sync them. 
-        - nothing more advanced than that. 
+        - there is a crosscheck, if some is missing, sync them.
+        - nothing more advanced than that.
         - current tests are pretty consistent, new mailservers are mainly the issue
-    - [Oskar] The idea we're talking about is not getting rid of them, but not making them so pivotal 
+    - [Oskar] The idea we're talking about is not getting rid of them, but not making them so pivotal
     - [Ricardo] isn't that kind of the reason with PoS and PoW
-    - [Adam] We aren't sure about mailservers all together, that's why we haven't spend a ton of time on them. 
+    - [Adam] We aren't sure about mailservers all together, that's why we haven't spend a ton of time on them.
     - [Ricardo] so it looks like we need something like sharding, that's what I was thinking about
     - [Oskar] Yeah, this seems like two different timescales on the projects
 
-## DAO - Barry
+### DAO - Barry
 - Basically we're researching current contracts deployed by giveth
 - it implements all functionality at this point with profiles
 - implemented insights to see how funds are being moved from pledge to pledge
 - working on a dashboaaa
 
-## Janitors - Oskar
+### Janitors - Oskar
 - essentially done to figure out state of each swarm
 - most everything in pivotal tracker
 - if you don't have access to this, ping #312-janitors
@@ -113,7 +155,7 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
         - [Igor] velocity only works for stable teams, which can become useless in our scenarios
         - [Oskar] one thing to do is try and keep track of who is available, especially during this holiday season
 
-## Browser - Julien
+### Browser - Julien
 - essentially we finished our sprint we were working on
     - mostly around low hanging fruits around browser issues
     - missing features and broken stuff
@@ -122,26 +164,26 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - almost finished but need some lower level stuff to finish
     - shifting to sticker markets, so it won't be prioritized
 
-## Desktop - Volodymyr
+### Desktop - Volodymyr
 - this week we are finished release version of desktop
 - most issues have PRs in progress
 - team proposals we have prioritized list of tasks for swarm to work on next
     - LINK HERE PLEASE
 
-## Wallet - Goran
+### Wallet - Goran
 - focus is on redesign changes tightened up and merged
 - a couple EIPs being finished up
 
-## Keycard - 
+### Keycard -
 - no one around to answer
 
-## Research Nimbus - Jacek
+### Research Nimbus - Jacek
 - no updates
 
-## Security - Corey
+### Security - Corey
 - I'LL FILL THIS OUT LATER
 
-## QA - Anton
+### QA - Anton
 - working on blocking PR to be merged
 - one more thing to be fixed by wallet team
 - no possible to be done in complete automated way
@@ -149,15 +191,15 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
 - also working on ????
     - didn't get this
 
-## Anything else?
-- [Ricardo] would like to hear more about public chats that 
+### Anything else?
+- [Ricardo] would like to hear more about public chats that
     - [Oskar] like partitioning topics?
     - [Igor] that's my topic, it's group chats all being in single topic
         - this is causing a large data load for a single group chat because you have to partition it somehow, but might have problems with darkness of public group chats
         - probably focus on after xmas holidays
         - I've seen you discuss this with Andrea in dicuss conversations
     - [Ricardo] Also this could be impemented with Status JS to test it or prototype things
-        - [Igor] also thing this should be implemented soon as possible because we can't release in public without group chats that are usable. 
+        - [Igor] also thing this should be implemented soon as possible because we can't release in public without group chats that are usable.
         - [Ricardo] Do you think we should have some more definition about these specs?
         - [Igor/Corey] Have swarm to discuss the spec in detail so everyone can be on the same page
         - [Igor] This should be on Core Improvements
@@ -166,7 +208,7 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
         - There is a task in message reliability about this
         - hasn't been started but it's there
 
-## Julien
+### Julien
 - implemented filtering based on Google API to detect fishing websites
     - discussed with Corey and Igor a couple weeks ago
     - conflicting security with privacy
@@ -183,7 +225,7 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - [Oskar] we really need to document to make sure we understand tradeoffs and they are made explicit
         - ARD: https://github.com/status-im/status-react/tree/develop/doc/decisions - should probably live in docs
 
-## Anything else?
+### Anything else?
 - [Ricardo] with TtT, I think we should use a captcha for users
     - doesn't rely on API, when user doesn't have contact in list, it should ask for captcha
         - if Alice wants to talk to Bob, Bob gives her a generated Captcha that she has to solve before messages are sent
@@ -193,10 +235,10 @@ Recording: https://www.youtube.com/watch?v=HVylXrDBJHg
     - [Ricardo] potentially every user has their own created capture, scanned image and corrupt part of the text
         - I guess implementing this would start with open source implementation if there is one
         - the only hard part is building the captcha system that is inside of the clients
-    - [Igor] if implemented in native code, it shouldn't be that difficult, they have good libraries for image and text manipulation.  Different, but relatively simple to do, and openGL if you want. 
+    - [Igor] if implemented in native code, it shouldn't be that difficult, they have good libraries for image and text manipulation.  Different, but relatively simple to do, and openGL if you want.
 - [Ricardo] Status JS noticed a lot of lack of documentation on how things work.  This would also help security quite a bit
-    - [Oskar] we have something like this for PFS, and then start working on things like it with PRs to docs site. 
-    - [Oskar] for example, I would like to know how ratcheting works in Status, I'm not sure, I want a place to go to figure that out. 
+    - [Oskar] we have something like this for PFS, and then start working on things like it with PRs to docs site.
+    - [Oskar] for example, I would like to know how ratcheting works in Status, I'm not sure, I want a place to go to figure that out.
 
 https://github.com/status-im/swarms
 

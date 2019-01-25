@@ -1,6 +1,78 @@
-# 8th Core Dev Call
+# Status Core Dev 8
 
-# Swarm Updates
+## Agenda
+
+0. Brief team/swarm updates (5-10m)
+- Core
+- Research
+- Product
+- Infra
+- Other
+
+1. Decoupling Whisper and Wallet key.
+
+Now that we started the keycard integration with status-react, we are wotking on decoupling the whisper and wallet keys.
+
+Reasons:
+
+1 - privacy (not sharing your wallet transactions in public chats)
+
+2 - security
+
+3 - keycard (wallet keys never leaves the card, transactions are signed by the card. whisper key is downloaded to the client and used to encrypt/decrypt messages).
+
+The wallet key will be derived with the current BIP44 derivation path.
+
+The whisper key will be derived with the path defined in the EIP we proposed: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1581.md
+
+Desired outcomes:
+
+Deciding how to exchange wallet address for in-chat transactions. Options:
+
+1 - In the current protocol, when Alice adds Bob to her contact lists, Bob receives a messages with Alice’s profile (name and picture). We can send the wallet address as well, allowing Bob to send in-chat transactions only after receiving Alice’s address.
+
+2 - Send a wallet-address-request on demand. When Bob wants to send a transaction to Alice, the protocol sends a request to Alice, Alice accepts, and Bob receives back the address to use in the transaction.    
+
+Links:
+
+1 - Decoupling whisper and wallet keys: https://discuss.status.im/t/multiple-whisper-and-wallet-keys/817.
+
+Work in progress branch: https://github.com/status-im/status-go/tree/experimental/decouple-keys
+
+2 - Steps needed + ideas/help needed on how to exchange wallet address for in-chat transactions https://notes.status.im/xIn9qA-3SWCbp7jkJCJjOg
+
+3 - Our "Non-wallet usage of keys derived from BIP-32 trees" proposal has been accepted (still in Draft). Kudos @bitgamma - https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1581.md
+
+2. Wallet dependency compromised, aka 'could've been us'
+Context OP: https://discuss.status.im/t/wallet-dependency-compromised/825 - it's easy to hijack dependencies, this can lead to loss of funds. We have 1k dependencies and little oversight right now.
+
+Desired outcomes:
+- What can we learn from this event?
+- How will it affect the priorities of what we do? What are we going to do about it?
+
+3. Upgradeable message-ids open forum.
+
+We had problems with message IDs for quite a while and they are impeding the upgrade, let's fix them finally.
+
+More context: status-im/status-react#6956
+
+[also - feedback on time? vs TH, 1h later? local times]
+
+[SKIPPED]
+
+- How to keep track of what artifacts are used in a build?
+    - To make debugging easier, we should start logging artifact SHAs (both go and react) every time the app starts up;
+    - Currently PR branches are rebased against develop on Jenkins and the respective commit gets lost (i.e. SHA in app doesn't mean anything)
+    - Options:
+        1. Fail build if PR branch isn't rebased
+        1. ~~Push tag of rebased branch~~ (unfortunately this creates GH releases as a side effect, polluting the releases page)
+        1. Push temp branch
+
+---
+
+# Notes
+
+## Swarm Updates
 
 ## Core Update
 (Igor)
@@ -23,14 +95,14 @@ finally merged latest go-ethereum and latest release seems to sync but 2 other b
  validaylabs web3 foundation collaboration
  repo in early stage and also secure messaging companion awesome-secure-messaging
  working with web3 working on time for workshop
- 
+
 focus on:
-- distributed state and async messaging 
+- distributed state and async messaging
 - mixnets
 
 - working on final swarm proposal with rough milestones,
 clear seperation and problem statements
-1 milestone 
+1 milestone
 
 ### Nimbus / Serenity
 (Jacek)
@@ -46,7 +118,7 @@ Working on Beaconchain milestone
 Goal is March clients should be communicating together in prelaunch testnet
 
 Curious to hear how to proceed with ULC integration
-also project to incentivise running nodes 
+also project to incentivise running nodes
 
 If these interest you talk to Jacek as well
 
@@ -75,7 +147,7 @@ no important updates for now
 
 upgrading a bunch of stuff
 Android NDK
-Setting up Search for our pages, 
+Setting up Search for our pages,
 plugin for hex..?? to it can index our pages
 
 introduce snake(??)that Corey is leading
@@ -93,22 +165,22 @@ edit new desktop tests, 2 investigations for automated testing of keycard and fo
 
 ## Decoupling Whisper key
 (AndreaF)
-from a user perspective  **this will be a breaking change for whisper identity** 
+from a user perspective  **this will be a breaking change for whisper identity**
 your whisper identity will change and your random name will change.
 
 2 different keys for wallet and Whisper
 - privacy not sharing wallet address
 - wallet key should never leave keycard, and having a whisper key that can be downloaded from the card
 
-wallet key will use same 
+wallet key will use same
 proposing EIP for non-wallet keys, extending BIP43 to have different keys
 
 branch already in status-go (and changes to go-ethereum) that already decouples the keys
 
-how to decide on how we want to exchange addresses 
+how to decide on how we want to exchange addresses
 two options
 1 when i add you, we are already sending info, so we can send address
-or 
+or
 2 we can have a request on demand when you request to send funds, they can choose to accept or not
 
 for the rest i posted links to discussion and steps we're impmenting
@@ -120,17 +192,17 @@ ecrecover can be used to migrate
 What happens when we upgrade for the user?
 undecided
 
-current idea is to require mstare key and create new leaf off root 
+current idea is to require mstare key and create new leaf off root
 
 concerned about different client compatibility (Metamask, Ledger, etc)
-should either allow derivation path / HD structure to end user 
+should either allow derivation path / HD structure to end user
 and/or
 create a standard specification for all clients
 
-Discussions about EthMagicians Wallet and Hardware wallet groups, 
+Discussions about EthMagicians Wallet and Hardware wallet groups,
 no major consensus in either
 
-Ties into a wider discussion Identities, decoupling keys, multiple wallets 
+Ties into a wider discussion Identities, decoupling keys, multiple wallets
 
 ## Dependencies being compromised
 
@@ -160,7 +232,7 @@ security issues hide in complexity
 sounds like we're trying to fix it by adding more complexity
 adding more tools to check we're more safe.
 
-A dep you don't have is one you 
+A dep you don't have is one you
 
 how can we simplify things, instead of adding things that can lead us to a more secure world?
 
@@ -178,7 +250,7 @@ We started doing them and then our org changed and then things
 
 everything is stored in the same db, so it's possible to accidently change state in chat by working on wallet, segments of the application should be modularised.
 
-create model (for signing) that doesn't touch react at all 
+create model (for signing) that doesn't touch react at all
 native ui components for security critical screens.
 
 Setup seperate call with Core, Wallet & Corey.
@@ -189,7 +261,7 @@ last idea, champions for tech (Clojure & go)
 (skipping Pedro not available)
 
 
-## Upgradable Message ID's 
+## Upgradable Message ID's
 (Igor)
 
 We currently have a hash of interpreted version, so hashes change depending on interpretation, so things break.
@@ -208,14 +280,14 @@ If we change again, we need to add code to support 3 versions of message id's
 Make a decision of what we want to do PR
 
 (Jacek)
-push back idea that maintaining multiple versions 
-techincally you should be able to isolate that, having different versions is good because you can compare them, this is a problem we'll be facing over and over again 
+push back idea that maintaining multiple versions
+techincally you should be able to isolate that, having different versions is good because you can compare them, this is a problem we'll be facing over and over again
 so introduce infrastructure in code to make handling those situations not so costly.
 
 (Multiple People)
 at the moment code is not structured to handled this. what makes it difficult?
 
-field names are bad "new-messaging-id" and the next would be "new-new-messaging-id"?? 
+field names are bad "new-messaging-id" and the next would be "new-new-messaging-id"??
 ....
 
 Just introduce versioning now.
@@ -224,9 +296,9 @@ Just introduce versioning now.
 we can actually do this, but you want to release app in 2 days we can't
 
 (Eric)
-migrations are local, 
+migrations are local,
 migrations of message-id, send old message id as well for the old versions?
-cannot 
+cannot
 
 (Jacek)
 make it a backwards compatible way and the cost is near zero, couple of bytes in
@@ -251,7 +323,7 @@ compatibility is not optional
 We all agree the thing is that next week we'll have to change format and we're just pushing out a quick fix, seems like a wasted effort.
 
 *** Events are dictating quality ***
-The same issue came up with last event, last two releases 
+The same issue came up with last event, last two releases
 Extensions stuff related to roadshow.
 
 Code should always be releasable at any point.
@@ -264,4 +336,3 @@ how do we apply this approach to database?
 ## OKRs?
 Michael mentioned OKR process dur 7th?
 Jarrad mucho confused, confirming with Chad
-
