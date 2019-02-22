@@ -44,7 +44,7 @@ Eric: So for tribute to talk we are starting to work on the screens. We are a do
 
 Oskar: Cool, so sticker market?
 
-Julien: Yep, so last week we mostly worked on values documents, like the result document is done, the specification is done. Mostly because Rachel invested a lot of time in this. We are validated the mockup so I think we are done with the mockup themselves. We agree that this is the right directions. Andrey spent some time implementing the mockup, and this week I will try to glue the mockup with contracts, and by the way Ricardo did some work on this contract too. One eventual open question that I would like to raise, for the MVP we probably will not consider ESC721 but it's still open to this discussion so if someone has an opinion around that, that would be appreciated.
+Julien: Yep, so last week we mostly worked on values documents, like the result document is done, the specification is done. Mostly because Rachel invested a lot of time in this. We are validated the mockup so I think we are done with the mockup themselves. We agree that this is the right directions. Andrei spent some time implementing the mockup, and this week I will try to glue the mockup with contracts, and by the way Ricardo did some work on this contract too. One eventual open question that I would like to raise, for the MVP we probably will not consider ESC721 but it's still open to this discussion so if someone has an opinion around that, that would be appreciated.
 
 # Dapp Store
 9:00 - 10:00
@@ -62,7 +62,7 @@ Andy: Taken the decision to make it as a web dapp in mind with the sticker marke
 
 Oskar: Cool, so network incentives?
 
-Status: Yeah we are continuing our research like Andrey did research on one of the ideas of incentive of the current infrastructure meaning whisper and mail servers. For the next week we wanna also take a look like taken into account that's there's also a protocol research happening so we want something more broad and applicable and future proof. So people want to have some research on something different and not like whisper side, just come up with something that's more generic and durable so that's essentially it I hope we'll share the documents this week, the drafts of research.
+Status: Yeah we are continuing our research like Andrea did research on one of the ideas of incentive of the current infrastructure meaning whisper and mail servers. For the next week we wanna also take a look like taken into account that's there's also a protocol research happening so we want something more broad and applicable and future proof. So people want to have some research on something different and not like whisper side, just come up with something that's more generic and durable so that's essentially it I hope we'll share the documents this week, the drafts of research.
 
 # Core Improvements
 12:00 - 13:00
@@ -97,17 +97,17 @@ Barry: A giver can veto, and projects can ultimately withdraw those funds after 
 
 Barry: We were just thinking about sort of what still needs to be done to these contracts from their perspective and from ours where there's mutual overlap and also to see the differences to understand maybe there needs to be like a broader user case to generalize them more to accommodate these sort of broader use cases but that's where it currently stands.
 
-Petty: Hey Barry Cory here, you wanna set up a meeting with me we could go over them to see what kind of, just to talk about that more in depth, the security aspect of these things.
+Petty: Hey Barry Corey here, you wanna set up a meeting with me we could go over them to see what kind of, just to talk about that more in depth, the security aspect of these things.
 
 Barry: Yeah sure.
 
 Petty: Thanks.
 
-Oskar: Cool, Gerald Annabelle do you wanna take your time?
+Oskar: Cool, Jarred or Nabil do you wanna take your time?
 
 19:00 - 20:00
 
-Status: Basically we've been meeting regularly. We had two design reviews last week and I think the process was pretty good, we just wanna make sure we have engineers attending each design review to make sure everything being proposed is feasible, it's good for the engineers to give input and have a heads up for what's coming along. Other than that I think the progress is going well in the most part. The one thing that I would like to request from everyone is for all the swarm leads to put in the number of hours that is happening in the spreadsheet that we sent by email just so that we can keep track of budget, so when we give updates at the townhalls. It doesn't need to be to the dot, just a plus or minus ten percent like a rough hourly amount spent is really important for us to make sure that we're assessing things properly.
+Nabil: Basically we've been meeting regularly. We had two design reviews last week and I think the process was pretty good, we just wanna make sure we have engineers attending each design review to make sure everything being proposed is feasible, it's good for the engineers to give input and have a heads up for what's coming along. Other than that I think the progress is going well in the most part. The one thing that I would like to request from everyone is for all the swarm leads to put in the number of hours that is happening in the spreadsheet that we sent by email just so that we can keep track of budget, so when we give updates at the townhalls. It doesn't need to be to the dot, just a plus or minus ten percent like a rough hourly amount spent is really important for us to make sure that we're assessing things properly.
 
 20:00 - 21:00
 
@@ -120,7 +120,7 @@ Oskar: Thanks I'll just add one thing to that. It'd be great if we could sort of
 # Core
 22:00 - 23:00
 
-Jarrad: Yeah a free course on that is to review digital tracker and also update it so either way we'll be mindful that. It's also worth noting that we are also in our research phase so if you've got any feedback on how things are going if there's anything that's not smooth or any way we can improve our processes please let us know so we can make adaptations.
+Jarrad: Yeah a free course on that is to review pivotaltracker and also update it so either way we'll be mindful that. It's also worth noting that we are also in our research phase so if you've got any feedback on how things are going if there's anything that's not smooth or any way we can improve our processes please let us know so we can make adaptations.
 
 Oskar: So just briefly do we have any updates from either Core, Core Browser, or Core Chat that's not covered in the previous updates?
 
@@ -129,7 +129,7 @@ Julien: I can give some updates on that if you want. Yeah so mostly we try to ta
 
 23:00 - 24:00
 
-Julien: Also we worked on some EIP's because we are browser so we try to work with all the other browser making sure we implement the same set of EIP's, we have the number of rings and chats to dicuss. There are currently two different EIP's that different teams are pushing and mostly metamask that we are also very invested in that. Andrey did a lot of work around that last week. In parallel I'm trying to finish the cable extension and making sure that all the relevant extension changes are being implemented. I'm pretty happy that last week I was able to do my first exchange with the cable extension so hopefully very soon we should be able to even make this a little more public and maybe write a blog post or something.
+Julien: Also we worked on some EIP's because we are browser so we try to work with all the other browser making sure we implement the same set of EIP's, we have the number of rings and chats to dicuss. There are currently two different EIP's that different teams are pushing and mostly metamask that we are also very invested in that. Andrei did a lot of work around that last week. In parallel I'm trying to finish the cable extension and making sure that all the relevant extension changes are being implemented. I'm pretty happy that last week I was able to do my first exchange with the cable extension so hopefully very soon we should be able to even make this a little more public and maybe write a blog post or something.
 
 # Desktop
 24:00 - 25:00
@@ -217,11 +217,11 @@ Hester: Thanks Oskar.
 
 35:00 - 36:00
 
-Hester: It's pretty basic but now that we've scoped the design work for at least most of the swarms I've decided to give you a quick snapshot of the current allocation by team, looking at Core, Andrey is the key context for Core, under core there are two swarms currently. Polish/Onboarding/Patient Zero which Andrey is also working on and Network Incentivation which Andrey is also working on. Then similar story for Chat where Maciej is the key contact for the team. Roughly three swarms connected to that although Sticker market is also dapp so it's not necessarily one on one but the swarms that Maciej is responsible for at the moment is Sticker Market, Tribute to Talk and Anti-Spam. For Dapps/Browser story changes slightly as the team contact is and will remain to be Denis who's been working on browser and dapps a lot up until now.
+Hester: It's pretty basic but now that we've scoped the design work for at least most of the swarms I've decided to give you a quick snapshot of the current allocation by team, looking at Core, Andrei is the key context for Core, under core there are two swarms currently. Polish/Onboarding/Patient Zero which Andrei is also working on and Network Incentivation which Andrei is also working on. Then similar story for Chat where Maciej is the key contact for the team. Roughly three swarms connected to that although Sticker market is also dapp so it's not necessarily one on one but the swarms that Maciej is responsible for at the moment is Sticker Market, Tribute to Talk and Anti-Spam. For Dapps/Browser story changes slightly as the team contact is and will remain to be Denis who's been working on browser and dapps a lot up until now.
 
 36:00 - 37:00
 
-Hester: Specifically for the dapp store swarm and going into Teller network later, Andrey will be the contact for now. Under Embark because it's a little difficult to connect the swarms to individual teams, for Teller Network the key contact is Denis. There are some other activities going on always that demand the designer's attention but for now the ones that you see on the right are a little bit deep prioritized. There might be time maybe an hour or so every now and then but they're not priority for now as the designers are primarily focused on the white paper use cases.
+Hester: Specifically for the dapp store swarm and going into Teller network later, Andrei will be the contact for now. Under Embark because it's a little difficult to connect the swarms to individual teams, for Teller Network the key contact is Denis. There are some other activities going on always that demand the designer's attention but for now the ones that you see on the right are a little bit deep prioritized. There might be time maybe an hour or so every now and then but they're not priority for now as the designers are primarily focused on the white paper use cases.
 
 37:00 - 38:00
 
@@ -237,6 +237,6 @@ Hester: The dapp discovery is part of dapp store so all the components that were
 
 Oskar: Cool yeah so any thoughts on this? I guess that's it for updates and hot topics. Any quick announcements?
 
-Jarrad: The Frog year double year discussion topic in the community is worth taking note of if you are not aware of it look into it.
+Jarrad: The ProgPOW year double year discussion topic in the community is worth taking note of if you are not aware of it look into it.
 
 Oskar: Thanks everyone, see you in two weeks. Bye.
