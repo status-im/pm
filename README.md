@@ -2,7 +2,7 @@
 
 ### Previous Meetings
  №  | Date | Notes | Recording | Transcript
- ---|---|---|---|
+ ---|---|---|---|---|
  10 | Mon, January 14, 2019 at 13:00 UTC | [notes](notes/meeting10.md) | [video](https://www.youtube.com/watch?v=4vWaqa38Hrs) | [transcript](notes/transcript10.md)
  9  | Mon, December 17, 2018 at 13:00 UTC | [notes](notes/meeting09.md) | [video](https://www.youtube.com/watch?v=HVylXrDBJHg) | transcript
  8  | Mon, December 3, 2018 at 12:00 UTC | [notes](notes/meeting08.md) | [video](https://www.youtube.com/watch?v=hTOuWU4Qpqo) | transcript
