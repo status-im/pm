@@ -62,7 +62,7 @@ Andy: Taken the decision to make it as a web dapp in mind with the sticker marke
 
 Oskar: Cool, so network incentives?
 
-Status: Yeah we are continuing our research like Andrea did research on one of the ideas of incentive of the current infrastructure meaning whisper and mail servers. For the next week we wanna also take a look like taken into account that's there's also a protocol research happening so we want something more broad and applicable and future proof. So people want to have some research on something different and not like whisper side, just come up with something that's more generic and durable so that's essentially it I hope we'll share the documents this week, the drafts of research.
+Igor: Yeah we are continuing our research like Andrea did research on one of the ideas of incentive of the current infrastructure meaning whisper and mail servers. For the next week we wanna also take a look like taken into account that's there's also a protocol research happening so we want something more broad and applicable and future proof. So people want to have some research on something different and not like whisper side, just come up with something that's more generic and durable so that's essentially it I hope we'll share the documents this week, the drafts of research.
 
 # Core Improvements
 12:00 - 13:00
@@ -78,12 +78,12 @@ Status: And also about half done with reliable messages so pruning was I guess a
 # Protocal Update
 14:00 - 15:00
 
-Oskar: Cool thank you. I'll do the protocol update. So mainly two things have been done. So one is workshop preparation. We're gonna meet just before Fossum in Brussels end of January, we'll be fine to seven people from sellers. So working on agenda and making as useful to as many people as possible. The other thing is proof of concept for a sort of data sync layer. I've written a post about this before but the idea is that you encapsulate an in between layer that doesn't concern itself with a message per say but instead of just syncing a piece of data and that allows us to build things on top of it. Sort of public chat and group chat and so on, but below it you can swap whisper out and still be able to sync data in a peer-to-peer way. In this proof concept there is a proto-buff specification that is wrong in some places but gets the jist across.
+Oskar: Cool thank you. I'll do the protocol update. So mainly two things have been done. So one is workshop preparation. We're gonna meet just before Fossdem in Brussels end of January, we'll be fine to seven people from Status. So working on agenda and making as useful to as many people as possible. The other thing is proof of concept for a sort of data sync layer. I've written a post about this before but the idea is that you encapsulate an in between layer that doesn't concern itself with a message per say but instead of just syncing a piece of data and that allows us to build things on top of it. Sort of public chat and group chat and so on, but below it you can swap whisper out and still be able to sync data in a peer-to-peer way. In this proof concept there is a protobuf specification that is wrong in some places but gets the gist across.
 
 # Dao
 15:00 - 16:00
 
-Oskar: As well as a sort of basic simulation in Python that has some unreliability assumptions and also deals with mobile node having slightly different characteristics than having something like a desktop note where a mobile node is mostly offline but sometimes goes online. Then sort of for a one-to-one chat and seeing how the system behaves, so I did a short write-up, I'll link to it in the notes, yeah please ask questions or specific things you want me to try to answer with this concept. Please ping me as well. This week we will continue to work from the workshop and looking at what original direction the future will constantly bring. dao?
+Oskar: As well as a sort of basic simulation in Python that has some unreliability assumptions and also deals with mobile node having slightly different characteristics than having something like a desktop note where a mobile node is mostly offline but sometimes goes online. Then sort of for a one-to-one chat and seeing how the system behaves, so I did a short write-up, I'll link to it in the notes, yeah please ask questions or specific things you want me to try to answer with this concept. Please ping me as well. This week we will continue to work from the workshop and looking at what the most useful direction the future proof of concepts will be. dao?
 
 16:00 - 17:00
 
