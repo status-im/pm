@@ -1,6 +1,11 @@
+# Intro
+
 0:00 - 1:00
 
 Oskar: Welcome to the eleventh Status Core Dev Call. We have quite a lot of things on the agenda today. We did a poll SMT voting to find the things people want to talk the most about. We'll start from the top and see how far we get with the time we have. Also just a small PSA, if you go to the repository, status-im/pm, we have a index of all the previous videos and notes if you want to refer back. Let's get started, so the first topic is Whisper availability inside Status Dapp browser, which is something that will benefit Teller Network as well as Gas Relayer and possibly others. So I guess Richard, would like to elaborate on it if you don't mind?
+
+
+# Whisper Availability
 
 1:00 - 2:00
 
@@ -174,6 +179,8 @@ Ricardo: Regarding mail servers I think that what should happen is that our impl
 
 Oskar: Let's make sure the conversation's focused, we have quite a few other things to go through. So let's move on to reproducible builds and sort of a quick overview and what's been going on. Pedro?
 
+# Reproducible builds
+
 22:00 - 23:00
 
 Pedro: I just wanted to make sure we're all on the same page. Just to start I'll give an overview of the problem for those that haven't been participating in these discussions in this space. So our goal is to be able to build old commits and be sure that they produce the same binaries. Right now our repo's are not set up for that. They sometimes reference external tools, which can be replaced by third parties at any time, we have no control over that. Or the same for branches in external repos that we reference. So sometimes we fork repos but we still reference the master branch and it's very easy for some other Status contributor to just do a commit on that master branch, that means that we'll never be able to just checkout an old commit and be able to build the same thing.
@@ -202,6 +209,8 @@ Pedro: So just be critical of dependencies that you see, and ask yourself if thi
 
 Ricardo: I think most things can be written by themselves. But I think some simple things that are only taken for convenience, that if you take like 100 lines to write it, that of course should not be a dependency. But if something very large, also something about the trust, if we do not trust the dependency, we can audit that specific version and get that commit hash of that dependency and lock there. There is this two cases that let's see.
 
+# Fee Structure
+
 28:00 - 29:00
 
 Pedro: If there's no further questions I think that's it.
@@ -212,11 +221,11 @@ Rachel: So this is coming up in context of Sticker Market sales because we're do
 
 29:00 - 30:00
 
-The predominant hypothesis seems to be that token velocity and value combined with having good open source contributions should eliminate the need for us to ever be charging rent for features but there might be worth burning a percentage of each sale of stickers in the meantime to have a deflationary effect. So I'm not sure if we actually want to get into the debate about these structures overall and financial sustainability of the the project or if they should just stick to the focus of the sticker market registry contract and regarding the fees for that right now, what decision do we take for the contract and how do we future-proof it for any like potentially desired changes in the future.
+Rachel: The predominant hypothesis seems to be that token velocity and value combined with having good open source contributions should eliminate the need for us to ever be charging rent for features but there might be worth burning a percentage of each sale of stickers in the meantime to have a deflationary effect. So I'm not sure if we actually want to get into the debate about these structures overall and financial sustainability of the the project or if they should just stick to the focus of the sticker market registry contract and regarding the fees for that right now, what decision do we take for the contract and how do we future-proof it for any like potentially desired changes in the future.
 
 30:00 - 31:00
 
-Ricardo: I think if we have something like the sticker markets and the Croatian markets then having this operation over the sticker packs, we might have a kind of optional fee and maybe when the owner of that sticker pack can specify how much a fee goes to the Croatian market automatically based on the user buys. It goes slowly rising organically as users buy it. And of course if the sticker market artist want to promote their own sticker pack they could just deposit in the Croation market.
+Ricardo: I think if we have something like the sticker markets and the Croatian markets then having this operation over the sticker packs, we might have a kind of optional fee and maybe when the owner of that sticker pack can specify how much a fee goes to the Croatian market automatically based on the user buys. It goes slowly rising organically as users buy it. And of course if the sticker market artist want to promote their own sticker pack they could just deposit in the Croatian market.
 
 Rachel: I think that there was also a similar suggestion made that artists when they submit their packs to the registry they could optionally donate some percentage of sales to status.
 
@@ -274,6 +283,8 @@ Ricardo: Ok we will focus in going in that direction in the Sticker Market contr
 Ricardo: Because that should be not only for the (MVV?) but for the whole idea for the final roadmap of sticker market, so take into consideration, we didn't have this decision, and I think everyone mostly agrees with the idea.
 
 Oskar: Alright. So moving on, ULC just got merged upstream after eight months, so that awesome. What does this mean for status and can we integrate it sometime soon? I guess Igor you have the context from the (LESS integration effort?) what's your take?
+
+# ULC
 
 38:00 - 39:00
 
@@ -359,6 +370,8 @@ Oskar: Just on the topic of what differences between this and having your own re
 
 Igor: Yeah that's fair.
 
+# Arbitration
+
 50:00 - 51:00
 
 Oskar: Arbitration? So there's a bunch of team that's been thinking of arbitration mechanisms. Seems like a common need so just trying to figure out how this looks like and who will implement this one. I guess Hester you had some points you wanted to discuss more in detail?
@@ -427,15 +440,17 @@ Oskar: I think there's a interesting parallel to legal systems here because you 
 
 1:01:00 - 1:02:00
 
-Oskar: But you start by underspecifying it, and just say there's going to be something like this but it's not clear what the mechanisms are, but you can evolve from there.
+Oskar: But you start by under-specifying it, and just say there's going to be something like this but it's not clear what the mechanisms are, but you can evolve from there.
 
-Ricardo: I think the problem we want to solve is, if someone like you starts using Sticker Market and starts including a lot of junk or sexual things and it's impleasant to people to go to the sticker market because there is a lot of junk showing on their screens, it's best interest of sticker to get rid of these things.
+Ricardo: I think the problem we want to solve is, if someone like you starts using Sticker Market and starts including a lot of junk or sexual things and it's unpleasant to people to go to the sticker market because there is a lot of junk showing on their screens, it's best interest of sticker to get rid of these things.
 
 1:02:00 - 1:03:00
 
 Ricardo: Now we have this, but in a centralized way, in a multi-sig, what I'm proposing is to having an open channel in the UI to send these messages in the public channel. It's not very well specified how it will be but it's some start that we can then progress in. Later on it will be something just like Claros but optimized for the (entity?) holders.
 
 Oskar: Any other thoughts on arbitration? Maybe people who haven't spoken? Let's move on. Regarding license for our code and moving into DOW and how the relationship looks between the code and the GmbH. I guess Jarrad do you want to?
+
+# CC0
 
 1:03:00 - 1:04:00
 
@@ -486,3 +501,85 @@ Jarrad: So basically (???) actually put up steps of when they did the relicensin
 Oskar: I guess practically speaking we might have some issues with bounties and so on, then look at the contributor, see if we can replace it, if not then I don't know. Especially for like designs and so on with, sort of involved with a game with map textures and so on, and there was conflict with one of the designers and he left, and that led to all of the map textures having to be redone. This is also maybe where decoupling the protocol from implementation would also be useful because that way if there's an issue with a specific implementation it would be less severe as well.
 
 1:10:00 - 1:11:00
+
+Oskar: On that note it would be useful to make sure that when we do the specifications and so on, the swarm templates are already CC zero but I don't know if there are other specification documents where this would be applicable as well.
+
+Jarrad: If we're seeing further into the future there's a very real possibility that the reference implementation will be a new code so it's not the end of the world if we can't do it with this one but it's definitely worth trying.
+
+Oskar: Any other thoughts on licenses? Cool alright I guess we're skipping the swarm updates. We recently starting blocking the PRs.
+
+# Automated Tests
+
+1:11:00 - 1:12:00
+
+Oskar: We had some issues with the PRs being merged that broke develop, and we are trying to block them with automated tests and so on and there's been some efforts in that area recently, Pedro do you want to give a brief overview of the state of things there?
+
+Pedro: The issue that we had that there was a period of time during the pipeline of pull requests where we weren't checking if automated tests had been run. What I fixed last week was to ensure that a PR already starts failing, when you create a PR it's in a failed state because there's no automated tests running, and that fixes the majority of the issues. The thing we don't have running yet is actually blocking the PR from being merged, even from a script.
+
+1:12:00 - 1:13:00
+
+Pedro: And to do that we would have to change some other things and the way the repo is set up. I tried to do this with Jakob last week but we had some issues, so we quickly saw that it wasn't an easy solution and that we would need to investigate further in another repo so we wouldn't step on other poeple's shoes while they're trying to do their work and merge PRs, so ideally we would create a replica of status react with all the automations and do the tests there, and once we are sure that everything is working we can deploy that on status react. Right now at least we get a visual indication that the PR is not in a good state, which is already a very good start.
+
+1:13:00 - 1:14:00
+
+Igor: I actually have some addition to that. This issues when develop got broken, there weren't any malicious case, it was because the visual indication in the PR was that everything is ok, and just test didn't run yet, so this thing was actually blocking the script from running is much less of an importance, because if a person just see that the PR checks aren't green yet then it's not safe to merge.
+
+1:14:00 - 1:15:00
+
+Pedro: If we see that in the future we still hit situations where we didn't want to merge and it was done, then we look further into actually enforcing this, but I think we are in a good situation already.
+
+Oskar: On the note of like it's great we have this tool sort of helping us make sure that we stick to protocol. It's important also to remember it's kind of a cultural shift as well, a lot of people work on the code base and so on, people sort of test their stuff beforehand on multiple platforms, just make sure that the PR is in good shape and try to be more hash last few months and reverting things, because breaking develop is a real hit to productivity to everyone else, because they depend on it working, and it can be frustrating for people who are trying to work on something and it doesn't build due to something unrelated. So just test your stuff before you push it, and be mindful of other people and their productivity. If something isn't working don't be afraid to revert it. And code reviews as well, blocking it if it's not good.
+
+1:15:00 - 1:16:00
+
+Oskar: Anything else that anybody wants to add on that area?
+
+Anton: Yes I just want to describe the actual work flow, how it works now. We are not blocking everything from the beginning because it can slow us too much since a lot of tasks need to be merged without testing, even automated tests, in case it's infrastructure or any other PR which is not related to the product.
+
+1:16:00 - 1:17:00
+
+Anton: Right now tests are setting pending status only when they start, it means that they start when PR is into test column, they won't block it or set pending status before PR getting to that column. It's not even forced block, you still can use merge and such, but it's like failed status in the end if any of the tests is failed, or passed status all statuses will be green when all of them are passed.
+
+Pedro: What I did is at check at the beginning of the pull request saying this is failing, the entry tests are failing because they will only be run when this moves to test column.
+
+1:17:00 - 1:18:00
+
+Pedro: So at least it gives explanation, it also makes it easier for people who are not familiar with the process they get an additional explanation on when the actual end-to-end tests will run.
+
+Anton: Also what I can see now each force push removes statuses from the PR, because it's a new commit. Does it set status back Pedro?
+
+Pedro: I don't think so. I could add support for that to listen to force pushes and recreate the status.
+
+Anton: Great.
+
+1:18:00 - 1:19:00
+
+Oskar: We actually managed to go through everything except swarm updates which is pretty impressive. I guess quick announcements then we'll wrap up. So I'll just start with one. Fossdem this week. Nimbus is gonna presenting, hes talking about making an apparent client from scratch, pretty exciting. Then we have the protocol workshop. That's on thursday friday. We'll try to have a hangout, as well as talk about what this means for Core next week. Igor?
+
+Igor: So first we're going to release one more hotfix, but that aside, we are planning to wrap up the next release that's public release 0933 so if you have some PR that absolutely have to be in the next release please tell me or Anna about this until the end of tomorrow essentially working day, if not then we can't guarantee that it goes to the release.
+
+1:19:00 - 1:20:00
+
+Oskar: Cool, anything else?
+
+Jarrad: I'm thinking about how status can self update, there's a thread in discuss, open to ideas and thoughts.
+
+Jacek: I'm participating in an effort right now in San Francisco which is called ETH 1.x, if you're not aware of what that is it's basically an effort an keep the ETH 1 chain alive while and maybe even thriving while ETH 2 is being developed. So there's a couple of proposals going on here.
+
+1:20:00 - 1:21:00
+
+Jacek: They're discussing new sink modes because sink is one of the biggest issues that we have and why people are having difficulty running nodes. Other than that there are chain promotes discussed and so on, but the biggest topic is probably the introduction of certain features that will allow a more nuanced accounting of storage and more nuanced accounted of storage will be used for basically two things. One is the potentially increased gas limit in the future so that you can compote more and sort of store while still keeping storage kept about the same way. And depending if it's necessary also to do storage rents, so if you're interested in these discussions there are recordings and there's going to be lots of discussion on this topic in all Core Devs calls going forward I suspect, so nows a good time to tune in and think about how you feel about these changes and participate in the discussions surrounding them.
+
+1:21:00 - 1:22:00
+
+Ricardo: I think that that's a really important thing to be discussed, all developers should be aware of that because it means using smart contracts becomes more complex, but it's needed, I think everyone in the community agrees with that.
+
+Petty: We're starting a hacker one campaign, probably a private campaign that allows us to work out the details of dealing with incident response, dealing with the disclosures and so on.
+
+1:22:00 - 1:23:00
+
+Petty: Start in about a week and a half when I get back from Belgium. We are going to try to tune the disclosure rate for hacker one packers to about 5 per month, so you can expect 5 bugs from hacker one per month. The scope that we are starting off with that people will be looked at, will be any of our current releases on mobile or desktop, and then whatever infrastructure we have to serve that to the public. If there's problems in any of that that they can find, which there will be, you can expect bugs from them that are well formed because they have a triage service that validates, reproduces, and manages the quality of reports before sending them to us. So just letting you know to be expecting that in about two weeks of time.
+
+1:23:00 - END
+
+Oskar: I would like to ask people to rate this call. I know the core team is doing this so just in terms of how useful it is on a scale from one to ten. If you would just write the number on status core devs on status. If anyone has any thoughts on how these calls can be improved and be more useful. So please put a number 1-10 where 10 is the highest. That's it for now. See you guys in two weeks.
