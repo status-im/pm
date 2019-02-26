@@ -323,4 +323,166 @@ Jacek: I'd say it's a big no no.
 
 44:00 - 45:00
 
-Petty: A better way to go about this, you think ULC 
+Petty: A better way to go about this, you think ULC might be allowing someone to run some type of node at their house and then their ULC version attached to it, but us running something is not the right way to move forward.
+
+Igor: But why is it better than somebody runs the nodes and connects with HTTP or json RPC API? So we allow right now if you create a custom network you can still show your custom RPC URL and it will work. It's a different technology but you get the same kind of thing. Is it any better than that?
+
+Jacek: It's the same but it's a stepping stone to something else. Running our own servers is worse. It's a step backwards instead of a neutral step.
+
+45:00 - 46:00
+
+Igor: Yeah that I agree and that's why both LESS and ULC are not that high on the roadmap right now because it's a huge project on how to do the whole crypto economy balance that everyone can run nodes and somehow communicate and validate eacho ther, or maybe it's even worse than inferior.
+
+Jarrad: I agree with both the workload and the secondary step, if there's the ability at least to expose the ability to run ULC even if you bring your own node, that would be a great step in the right direction.
+
+46:00 - 47:00
+
+Igor: Yeah that's possible to implement relatively in the short term. I don't know if the PR was merged or how well tested it was. Because we had problems with ADS and ULC probably has the same issues with chain being too far away from what it actually is and doesn't really handle when the chain forks and then remerges, it didn't handle this well. We can try to enable that as test mode when we upgrade status go next time.
+
+Jarrad: That would be amazing. Let's not worry any further than that for now.
+
+47:00 - 48:00
+
+Ricardo: I think some of the ULC improvements they can also be used for the mail servers improvements, getting rid of the mail servers, because it seems to solve the same problem, but instead of solving the story of messages, this is network, so kind of similar problem in my point of view.
+
+Igor: I don't see how, because essentially what is ALS is, ALS is normal ethereum client but with smaller receipt sizes that you download, you don't download all the data, only selected data, but still verified. ULC is the same as LESS, except verification of blocks code locally you call some RPC method to some other node that returns the hash or something.
+
+48:00 - 49:00
+
+Igor: It's the same blockchain code with some thing disabled or delegated to other nodes. So it's not like something on top of blockchain.
+
+Ricardo: Yeah I agree that there is this difference, in Ethereum you have this linked information because of the blockchain, but in stages you don't have that, we need to solve this problem of having a proof of state sending a message, we didn't solve this, so every message is valid while in Ethereum not.
+
+49:00 - 50:00
+
+Oskar: Just on the topic of what differences between this and having your own remote or whatever, if you're running everything yourself it's just one to one and there's no difference, but this also opens up, because if you ULC you can have multiple nodes right, you can have semi trusted set up, maybe you have multiple friends, and lets say you have LESS service in dapp node you can connect to multiple and you don't need to trust anyone but it's still, if you check that 3/5 still return the same hash and you're still better off, so that type of racing you can't do if you just have someone else's remote servers, so it's slightly more sophisticated as well, which I think is the difference.
+
+Igor: Yeah that's fair.
+
+50:00 - 51:00
+
+Oskar: Arbitration? So there's a bunch of team that's been thinking of arbitration mechanisms. Seems like a common need so just trying to figure out how this looks like and who will implement this one. I guess Hester you had some points you wanted to discuss more in detail?
+
+Hester: I'm trying to find my list questions. So the intention would be not to go too much in depth it's more to make an inventory of who is concerned about arbitration as in what swarm will need some form of arbitration. It came up in Teller Network, Sticker Market, dapp store, so it seems to be a relevant topic and I'd like to understand for whom it is most relevant. So I'd like to do a sort of round-the-room to the swarm leads to understand has arbitration come up, are you already working on it, do you see any likely forms of implementation?
+
+51:00 - 52:00
+
+Ricardo: I think the most solid implementation of arbitration that I've seen is (collaterals.io?) from consensus. I'm not sure if it's running but I've seen some presentations, it seems like a good solution. They provide examples of user experience, it's mostly like people trusts random other people to deal with their problems. The majority will select the most obvious answer that is the truth.
+
+52:00 - 53:00
+
+Ricardo: It seems like this is something that we want. In the swarms like Teller Network for example the disputing of claims might also be relevant to sticker market like copyright claim, if we want to implement that stuff because copyright is not really nice, maybe we want to have it, just to prevent, removing duplicates inside of our own registry just to have the first there, not like a copyright that you are suing, but something like that.
+
+53:00 - 54:00
+
+Ricardo: Maybe the declaration market could be a way to get over arbitration in the sticker markets case, but not in the Teller Network. Declaration market can solve a different problem, it makes like a ranking of the best, and arbitration is making a decision of who is right and who is wrong.
+
+Hester: So you're saying Teller Network would mostly be in case of disputes around claims, and sticker market would be around copyright issues.
+
+Ricardo: Copyright as an example but we can have other things, like obscene emojis, we don't want that, or maybe we have a rating claim over it, and if someone submits a sexual sticker in a plus 18 claim, the arbitration would kill.
+
+54:00 - 55:00
+
+Ricardo: This is a much more advanced in the roadmap in the sticker market the MVP would not include that, but in the final product we would definitely have that. For example in the MVC we have categories, the controller would be able to move or change the categories of the original sticker back to be sold. This could be done by this arbitration systems.
+
+55:00 - 56:00
+
+Hester: So Teller Network or Sticker Market do you see relevance of arbitration anywhere else?
+
+Julien: In the case of sticker market, as Ricardo said we are considering using decoration market so I'm curious to hear if you think there is some kind of limitation of using decoration market specifically for using sticker market.
+
+Ricardo: It depends on how in the end the decoration market will look like, but in the general sense there is this limitation, because you can not take an action to change something in the decoration market, you can only create, maybe you can create a sticker market over a topic for example, but it kind of gets not consistent with the data set of the sticker market itself that says it has only one category. So the things should make sense in this case.
+
+56:00 - 57:00
+
+Ricardo: So maybe the decoration market would be used in the sticker market but in the sense of the ranking of better stickers, while the arbitration would be used to actually remove a sticker pack from the existence of the dapps. That I think is the difference.
+
+Julien: Ok.
+
+Ricardo: For the closest solution that we have, the MVP's that requires this solution, we are using controller that would be a multi-sig wallet, and later we can decide how the arbitration would look like. In the case of Claros the arbitration actually looks like a governance, and it's basically that if you see the smart contracts.
+
+57:00 - 58:00
+
+Ricardo: So maybe that's a kind of solution, maybe we just go to working to the DOW and set the DOW to do the arbitration.
+
+Hester: It sounds like at least also given the time for Teller Network, you're mostly looking into arbitration now, so it would make sense if it comes up in other projects, to check in with Teller Network to see what the status is there and if something has been developed in that point in time.
+
+Oskar: So I'm not sure if this strictly answers arbitration, there's likely going to be both ULC set ups which is not a priority right now, but network incentivation there might be certain slashing schemes where you put up some stake and if certain conditions are met you slash that state. I'm not sure if you want to have it under the same umbrella but it might come up there. It's slightly different in it's mechanics.
+
+58:00 - 59:00
+
+Ricardo: I agree it's similar. I want to add another thing that we just start implementing these report features while we don't have it, at least sending a mail, but we can send a message inside of status using murmur I think soon, maybe today to someone that is taking care of this. Even if we don't have the perfect solution we need to have that kind of solution because we need to have this expectation of what we need to solve.
+
+59:00 - 1:00:00
+
+Ricardo: Ofcourse we will include that report feature, it will go to the wall of shame, but it's better this way than not having it all. If it doesn't work perfectly, it will at least show us that we need to fix this.
+
+Oskar: Would it make sense to create an interface for this and then you can (ammend?) that whatever contract that deals with this is kind of generic and the specific mechanism that is used depends on the use case or depends on resource we do this on, what sort of abstraction makes sense and will be useful to various products?
+
+1:00:00 - 1:01:00
+
+Ricardo: Yes I think we could have a swarm for opening arbitration case, maybe we can implement that even for files, I don't know it depends on the future of how messaging will be, but for now we only send that message to someone or to some channel, it can be a public channel that receives all the reports, so when you click reports in a sticker pack it will go through a public channel that is reports and it will say "this sticker pack I reported it", then someone would be looking at it and maybe we can take some action if that's relevant.
+
+Oskar: I think there's a interesting parallel to legal systems here because you can look at it like a common law based system, where you say all we know is that there will be conflicts and they might involve these agents, but specifically how this decision is made depends on, right? So if you defer it to some abstract interface and then you can sort of build up this, maybe you start off with the most common offenders whether that's stickers or copyright claims or something else.
+
+1:01:00 - 1:02:00
+
+Oskar: But you start by underspecifying it, and just say there's going to be something like this but it's not clear what the mechanisms are, but you can evolve from there.
+
+Ricardo: I think the problem we want to solve is, if someone like you starts using Sticker Market and starts including a lot of junk or sexual things and it's impleasant to people to go to the sticker market because there is a lot of junk showing on their screens, it's best interest of sticker to get rid of these things.
+
+1:02:00 - 1:03:00
+
+Ricardo: Now we have this, but in a centralized way, in a multi-sig, what I'm proposing is to having an open channel in the UI to send these messages in the public channel. It's not very well specified how it will be but it's some start that we can then progress in. Later on it will be something just like Claros but optimized for the (entity?) holders.
+
+Oskar: Any other thoughts on arbitration? Maybe people who haven't spoken? Let's move on. Regarding license for our code and moving into DOW and how the relationship looks between the code and the GmbH. I guess Jarrad do you want to?
+
+1:03:00 - 1:04:00
+
+Jarrad: Yeah so depending on the regulatory climates, the jurisdictions we have distributed binaries in, and the distribution channels channels policies that we have to adhere to, it seems that the GmbH may be forced to create binaries that's in conflict with the vision of what the community is about. In this case it makes sense for us to move a lot of our codebase into the public domain, which is actually a lot more complicated than it sounds, it's very difficult to waive your copyright.
+
+1:04:00 - 1:05:00
+
+Jarrad: However if we relicense under CC zero it basically waives everything in the public domain however it degrades into a very liberal license in the event that the law does not allow you to put code into the public domain. So in this case that would allow the community to take the source code and create a new source of truth, in which the GmbH would probably maintain a fork of and contribute to. So that requires the participation of every contributor that who's contributed to the codebase. So basically I wanted to see if there's any objections to that. You can mull it over. But then we have to go rounding up people and getting them to sign some basic paperwork allowing us to do that.
+
+1:05:00 - 1:06:00
+
+Oskar: What does this mean for people who have left the product?
+
+Jarrad: That means you need to contact them and get their permission. Same thing for contributors who have never actually joined the project. Any contributor at all basically.
+
+Nabil: Does it have an impact on dependencies too?
+
+Jarrad: Not really, because basically we are licensed under MPL, MIT, and Apache. I think the predominant ones. They're all copyleft in some form, and CC zero is compatible with all that, and any way public domain is more so.
+
+1:06:00 - 1:07:00
+
+Petty: Is there any like statue or timeframe in which we have to go back, is it everyone who's ever contributed to status, or if within a certain amount of time they don't have to?
+
+Jarrad: Everyone owns copyright over their own contributions, so if we're not using that code anymore that wouldn't be relevant, but we'd have to remove that from our history, I think it would be better to just reach out to everybody.
+
+Pedro: I was under the impression that on our contracts we already gave up the rights to our work but maybe I'm wrong.
+
+1:07:00 - 1:08:00
+
+Jarrad: Actually I haven't looked up on that. I did ask (???) advice, but I haven't heard much from her.
+
+Petty: Yeah but if someone doesn't join and sign a contract then they are not part of that set, that might be easier for anyone who has ever worked for us, but any outside contributers would have to be looked at.
+
+Jarrad: Yeah absolutely.
+
+Igor: Also I guess it might lead to revisit of folder dependencies if their licenses are compatible with...
+
+Jarrad: I don't think that's really an issue, if we're using the dependencies and they don't have an issue with GPL or MPL, then they're not going to be an issue with a consumer, because those dependencies still retain their own licenses right, it's only our own codebase that we are waiving the copyrights.
+
+1:08:00 - 1:09:00
+
+Oskar: In terms of practically moving forward with this, what help would you like to see from other people, and if there's some sort of minimal core in terms of this is the most important for example status go and status react, or how do you look at that practically making it happen.
+
+Jarrad: So basically (???) actually put up steps of when they did the relicensing of CPP ethereum. But essentially it's make everybody aware of this, gather everbody's contact details and emails, then email them with the situation, the paperwork, and get as many signatures back as you can.
+
+1:09:00 - 1:10:00
+
+Oskar: I guess practically speaking we might have some issues with bounties and so on, then look at the contributor, see if we can replace it, if not then I don't know. Especially for like designs and so on with, sort of involved with a game with map textures and so on, and there was conflict with one of the designers and he left, and that led to all of the map textures having to be redone. This is also maybe where decoupling the protocol from implementation would also be useful because that way if there's an issue with a specific implementation it would be less severe as well.
+
+1:10:00 - 1:11:00
