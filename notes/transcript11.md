@@ -2,70 +2,70 @@
 
 0:00 - 1:00
 
-Oskar: Welcome to the eleventh Status Core Dev Call. We have quite a lot of things on the agenda today. We did a poll SMT voting to find the things people want to talk the most about. We'll start from the top and see how far we get with the time we have. Also just a small PSA, if you go to the repository, status-im/pm, we have a index of all the previous videos and notes if you want to refer back. Let's get started, so the first topic is Whisper availability inside Status Dapp browser, which is something that will benefit Teller Network as well as Gas Relayer and possibly others. So I guess Richard, would like to elaborate on it if you don't mind?
+Oskar: Welcome to the eleventh Status Core Dev Call. We have quite a lot of things on the agenda today. We did a poll SNT voting to find the things people want to talk the most about. We'll start from the top and see how far we get with the time we have. Also just a small PSA, if you go to the repository, status-im/pm, we have a index of all the previous videos and notes if you want to refer back. Let's get started, so the first topic is Whisper availability inside Status Dapp browser, which is something that will benefit Teller Network as well as Gas Relayer and possibly others. So I guess Richard, would like to elaborate on it if you don't mind?
 
 
 # Whisper Availability
 
 1:00 - 2:00
 
-Richard: So basically we are going to do the development of the Gas Relayer and Teller Network. We saw that we have a need to have Whisper available in all the apps, mostly because we want all the apps to be able to communicate between each other. What the rest of the team working on the Gas Relayer and Teller Network and I wanted to know is what is the coordinate state of this functionality and what would it take for Dutch to be able to use Whisper in the (Work Tree?) provider that the Status provides?
+Richard: So basically we are going to do the development of the Gas Relayer and Teller Network. We saw that we have a need to have Whisper available in all the apps, mostly because we want all the apps to be able to communicate between each other. What the rest of the team working on the Gas Relayer and Teller Network and I wanted to know is what is the coordinate state of this functionality and what would it take for Dutch to be able to use Whisper in the Web3 provider that the Status provides?
 
-Status (Dutch?): Well since I've been discussing this before, probably since it's building, I have improved my answer. So first question is, do you need this functionality only when the Dapp is open in the status browser or do you need it to send the synchronous notifications to somewhere.
+Igor: Well since I've been discussing this before, probably since it's building, I have improved my answer. So first question is, do you need this functionality only when the Dapp is open in the status browser or do you need it to send the synchronous notifications to somewhere.
 
 Richard: Probably what scenarios would be useful?
 
 2:00 - 3:00
 
-Status (Dutch?): So for the first one it's pretty trivial to just allow the namespace and we already blocked the... by default Whisper has a pretty poor API in terms of security, so if we just allow you all the whisper API you would be able to take the private keys and replace them. So we already limit them so we can allow this while the app is running, basically Javascript is being executed in the browser. That will not help you to do anything synchronous while the app is running. So we were discussing things like for instance, you get a notification that you won the bet, and you need to send the notification, for that it is pretty useless to just allow it in status browser.
+Igor: So for the first one it's pretty trivial to just allow the namespace and we already blocked the... by default Whisper has a pretty poor API in terms of security, so if we just allow you all the whisper API you would be able to take the private keys and replace them. So we already limit them so we can allow this while the app is running, basically Javascript is being executed in the browser. That will not help you to do anything synchronous while the app is running. So we were discussing things like for instance, you get a notification that you won the bet, and you need to send the notification, for that it is pretty useless to just allow it in status browser.
 
 3:00 - 4:00
 
-Status (Dutch?): For that we thought about different things, and I even had a hacked version of Status Whisper that allows you to in Javascript make a whisper envelope, and just use a HTTP/RPC API to send it. But then the problem is where to host it. I know that there was a huge pushback against hosting our own server with that because of the distance realization reasons, so that's our biggest issue right now. What will be this place where you go and call this RPC API when there is no status client active. That's where we stopped. Otherwise it's a technically solvable issue.
+Igor: For that we thought about different things, and I even had a hacked version of Status Whisper that allows you to in Javascript make a whisper envelope, and just use a HTTP/RPC API to send it. But then the problem is where to host it. I know that there was a huge pushback against hosting our own server with that because of the distance realization reasons, so that's our biggest issue right now. What will be this place where you go and call this RPC API when there is no status client active. That's where we stopped. Otherwise it's a technically solvable issue.
 
 Iuri: So already having the first case supported that will be a huge help.
 
 4:00 - 5:00
 
-Status (Dutch?): So just inside the browser right?
+Igor: So just inside the browser right?
 
 Iuri: Yeah that would already be a big help.
 
-Status (Dutch?): Yeah so just ping me on Status, I will add it to our backlog, and I will try to just make an update to Status GO and it will allow this namespace, it's pretty trivial.
+Igor: Yeah so just ping me on Status, I will add it to our backlog, and I will try to just make an update to Status GO and it will allow this namespace, it's pretty trivial.
 
 Ricardo: So just a question about this namespace. It needs to be locked because if you allow anything at Whisper you could also make transactions or anything using that?
 
-Status (Dutch?): Essentially you can pretend to be someone else and replace the keys and things like this, so all this API Whisper doesn't split for some reason, like management API vs. normal user API's so if you allow all whisper API's you will have all Admin API's which you dont want. So what we did is we made a whitelist of methods that we can allow. Right now we just block everything Whisper, but we can allow POST, which is probably the method you want if you want to send stuff.
+Igor: Essentially you can pretend to be someone else and replace the keys and things like this, so all this API Whisper doesn't split for some reason, like management API vs. normal user API's so if you allow all whisper API's you will have all Admin API's which you dont want. So what we did is we made a whitelist of methods that we can allow. Right now we just block everything Whisper, but we can allow POST, which is probably the method you want if you want to send stuff.
 
 5:00 - 6:00
 
-Status (Dutch?): And also creating filters and reading from filters which is also a question. Do you need to be allowed to read from Whisper, otherwise you will theoretically be able to read all the messages from all the chats.
+Igor: And also creating filters and reading from filters which is also a question. Do you need to be allowed to read from Whisper, otherwise you will theoretically be able to read all the messages from all the chats.
 
 Jarrad: Is it possible to blacklist the Whisper public key that the user is logged in as?
 
-Status (Dutch?): Yeah it's also possible, we can do whatever we want we intercept all the calls and inspect them at runtime, right now what we implemented is we whitelisted the POST method or something like that, but we can blacklist as well just in case.
+Igor: Yeah it's also possible, we can do whatever we want we intercept all the calls and inspect them at runtime, right now what we implemented is we whitelisted the POST method or something like that, but we can blacklist as well just in case.
 
 Iuri: We would need the public key for identity purposes.
 
 6:00 - 7:00
 
-Status (Dutch?): But you need a seperate, or do you need the same public key as the user? Because you if you use POST it will use keys as a user. Or this is private keys I'm talking about. The public keys you probably can use whatever you want.
+Igor: But you need a seperate, or do you need the same public key as the user? Because you if you use POST it will use keys as a user. Or this is private keys I'm talking about. The public keys you probably can use whatever you want.
 
 Jarrad: Yeah so sorry I meant the private keys from the whisper keychain.
 
-Status (Dutch?): Yeah so I don't know maybe it's worth setting up the meeting with Cory about how to treat those. Maybe we should generate a second key-pair for dapps seperately so you can figure out if a person sent this message or a dapp in behalf of this person.
+Igor: Yeah so I don't know maybe it's worth setting up the meeting with Cory about how to treat those. Maybe we should generate a second key-pair for dapps seperately so you can figure out if a person sent this message or a dapp in behalf of this person.
 
 Jarrad: I think dapps can generate their identities and inject into whisper keychain from the API, unless that's changed? So I think that would be fine as long as we can expose the currently logged in user public key to dapps which doesn't have to be through whisper.
 
 7:00 - 8:00
 
-Status (Dutch?): Yeah isn't this possible already? Just to get the public key from the current account? It's not a whisper API?
+Igor: Yeah isn't this possible already? Just to get the public key from the current account? It's not a whisper API?
 
 Jarrad: Yeah that would be the address, I'm not sure if the public key.
 
 Petty: I want to be real sure on what we're exposing to people, whether or not we're informing the user that that's happening. At least wanna know what we're exposing to people, then informing the user what we expose.
 
-Status (Dutch?): That's what I would like to do, use case by use case, maybe we can just make a diagram for each use case how we think and then you can review it.
+Igor: That's what I would like to do, use case by use case, maybe we can just make a diagram for each use case how we think and then you can review it.
 
 Iuri: There is also the question of "would we confirm what the user each post?" or just let that happen? I kinda see that at minimum the user would have to confirm they wanna give whisper access to the dapp? But then the question is if the dapp does a post, do we want a confirmation for that? I'm not sure it would be very helpful, depending on the payloads.
 
@@ -77,21 +77,21 @@ Jarrad: I don't think it is. I think if we kind of bundle this in, in the same d
 
 Iuri: I think a possible solution for that would be, the user would authorize a public private key generated by the dapp itself as a representative so to speak, and then it gets sent client-side, kind of a like a central transaction in web3, but the thing is that whisper does not support this API, it's kinda of all like server-side so to speak.
 
-Status (Dutch?): That's what we hacked with Andrei actually, I think it was a raw post to post raw, when you can encrypt everything in javascript lets say, then just post raw data that will be transmitted into whisper. That works.
+Igor: That's what we hacked with Andrei actually, I think it was a raw post to post raw, when you can encrypt everything in javascript lets say, then just post raw data that will be transmitted into whisper. That works.
 
 Iuri: That design makes much more sense. I was actually quite surprised whisper designed this way.
 
-Status (Dutch?): That's exactly why there is no whisper on (inFuhrer?)
+Igor: That's exactly why there is no whisper on (inFuhrer?)
 
 10:00 - 11:00
 
 Iuri: I think that should be proposed as a standard or extension of whisper.
 
-Status (Dutch?): We did talk to the whisper guys but I dont think it went anywhere. Maybe we should go for another round.
+Igor: We did talk to the whisper guys but I dont think it went anywhere. Maybe we should go for another round.
 
 Jarrad: We could propose it as an EIP but I wouldn't put too much love into it. My understanding is that it's better that we focus on our protocol efforts moving forward.
 
-Status (Dutch?): So maybe we should just have a separate discussion on exactly what to do and who will do what in each timeframe, just specifically for that.
+Igor: So maybe we should just have a separate discussion on exactly what to do and who will do what in each timeframe, just specifically for that.
 
 Jarrad: Yeah sounds good.
 
@@ -99,15 +99,15 @@ Jarrad: Yeah sounds good.
 
 Iuri: Just a final question, if we do then enable the whisper object, how long do you think that could take, including the release itself?
 
-Status (Dutch?): Well it depends on how we want to enable it. Just enabling the POST message, including the release would probably take a week. If we are talking about also having some UI that shows "this dapp wants to use whisper do you allow" would take more time.
+Igor: Well it depends on how we want to enable it. Just enabling the POST message, including the release would probably take a week. If we are talking about also having some UI that shows "this dapp wants to use whisper do you allow" would take more time.
 
 Jarrad: It would be pretty ideal if we could maintain a separate branch that has this trivial version enabled so it doesn't block the Teller Network guys. But we won't merge that into develop any time soon.
 
-Status (Dutch?): That's actually a good idea yeah.
+Igor: That's actually a good idea yeah.
 
 12:00 - 13:00
 
-Status (Dutch?): So the simplest POST that will actually use the privacy of a user, even if it's a separate branch just for testing can be done in a day. Then post raw might take a few days more because I kept this code in a separate branch it might be already outdated after all the guest updates.
+Igor: So the simplest POST that will actually use the privacy of a user, even if it's a separate branch just for testing can be done in a day. Then post raw might take a few days more because I kept this code in a separate branch it might be already outdated after all the guest updates.
 
 Jarrad: That sounds like a good path forward.
 
@@ -117,25 +117,25 @@ Jarrad: Yeah that's why it's critical not to allow the dapp to have access to th
 
 13:00 - 14:00
 
-Status (Dutch?): Yeah but that's one bailout the whole method that gets private keys is totally blacklisted so no matter what you expose it will be blocked on the integration level. So even if we exposed SSH namespace.
+Igor: Yeah but that's one bailout the whole method that gets private keys is totally blacklisted so no matter what you expose it will be blocked on the integration level. So even if we exposed SSH namespace.
 
 Ricardo: Yeah but what I mean is if you open the app you don't want the app automatically sends messages in your name to your friends because they not only read the message but fake your identity.
 
-Status (Dutch?): That's why when we should release only when it's generates a separate pair of keys so we know it's a dapp on behalf of the user and not the user himself.
+Igor: That's why when we should release only when it's generates a separate pair of keys so we know it's a dapp on behalf of the user and not the user himself.
 
 14:00 - 15:00
 
 Iuri: So just a quick question regarding what we just talked about, the central transactions so to speak, you're talking about RPC server and all that, but can't we just, the whisper object that we inject into the dapp, can't we put an api that all it does is forward the package?
 
-Status (Dutch?): Yeah I guess the latest idea was like this. Just generate the entire envelope yourself, the api just sends the envelope already encrypted with what you want. That's what we wanted to essentially, we worked on to enable bots on whisper but it didn't go very far so...
+Igor: Yeah I guess the latest idea was like this. Just generate the entire envelope yourself, the api just sends the envelope already encrypted with what you want. That's what we wanted to essentially, we worked on to enable bots on whisper but it didn't go very far so...
 
 Iuri: We actually have all that in GS already with murmur, and then it's just a matter of the transport protocol. That way the injected object would have entry and murmur can just connect to that.
 
 15:00 - 16:00
 
-Iuri: For Teller this would be great, if the browser supports whisper we can use that, if not we could use (lipidTP?) and all that stuff. So we can talk outside the call about how that API could look like.
+Iuri: For Teller this would be great, if the browser supports whisper we can use that, if not we could use libp2p and all that stuff. So we can talk outside the call about how that API could look like.
 
-Status (Dutch?): I'll try to find out where my proof of concept is.
+Igor: I'll try to find out where my proof of concept is.
 
 Jacek: One other thing to keep in mind, if you allow to free and access these API so that dapps can basically publish anything they want without any structure, will also be closing the same upgrades path for the future.
 
@@ -280,15 +280,15 @@ Ricardo: Ok we will focus in going in that direction in the Sticker Market contr
 
 37:00 - 38:00
 
-Ricardo: Because that should be not only for the (MVV?) but for the whole idea for the final roadmap of sticker market, so take into consideration, we didn't have this decision, and I think everyone mostly agrees with the idea.
+Ricardo: Because that should be not only for the MVP but for the whole idea for the final roadmap of sticker market, so take into consideration, we didn't have this decision, and I think everyone mostly agrees with the idea.
 
-Oskar: Alright. So moving on, ULC just got merged upstream after eight months, so that awesome. What does this mean for status and can we integrate it sometime soon? I guess Igor you have the context from the (LESS integration effort?) what's your take?
+Oskar: Alright. So moving on, ULC just got merged upstream after eight months, so that awesome. What does this mean for status and can we integrate it sometime soon? I guess Igor you have the context from the LES integration effort what's your take?
 
 # ULC
 
 38:00 - 39:00
 
-Igor: Well there is even a PR that integrates ULC but as a separate patch that enables it, but the problem with the ULC is the same as the problem with LESS, it needs servers somewhere. And with all this Constantinople thing there are no reliable servers even on the main nor Rinkeby right because as I understand last time it was tested on Rinkeby. So we need to wait until Constantinople is finally resolved. That's the big blocker, and it was since I started integrating this, because we started doing something then half of the nodes were not Constantinople half were Constantinople. Also you'll see is not a magic thing, so it requires that you trust some nodes, and that means that you kinda need some place, and it's not solved, it's just like this, this PR is essentially technical implementation of what if you know, who you can trust, then you can do this quick sink solution something like this.
+Igor: Well there is even a PR that integrates ULC but as a separate patch that enables it, but the problem with the ULC is the same as the problem with LES, it needs servers somewhere. And with all this Constantinople thing there are no reliable servers even on the main nor Rinkeby right because as I understand last time it was tested on Rinkeby. So we need to wait until Constantinople is finally resolved. That's the big blocker, and it was since I started integrating this, because we started doing something then half of the nodes were not Constantinople half were Constantinople. Also you'll see is not a magic thing, so it requires that you trust some nodes, and that means that you kinda need some place, and it's not solved, it's just like this, this PR is essentially technical implementation of what if you know, who you can trust, then you can do this quick sink solution something like this.
 
 39:00 - 40:00
 
@@ -298,7 +298,7 @@ Oskar: It's still a step up from only offering (Rivera?)
 
 Igor: Sure but that means we also have to host this trusted servers ourselves and protect them.
 
-Oskar: On that note, Andrei Petro, who's working on webnode, he also reached out and he's looking to integrate the ULC support for webnode, so that would be at least one source for these types of nodes. It's definitely not a general solution but it's a potential start maybe.
+Oskar: On that note, Andrey Petrov, who's working on VIPnode, he also reached out and he's looking to integrate the ULC support for VIPnode, so that would be at least one source for these types of nodes. It's definitely not a general solution but it's a potential start maybe.
 
 40:00 - 41:00
 
@@ -342,7 +342,7 @@ Jacek: It's the same but it's a stepping stone to something else. Running our ow
 
 45:00 - 46:00
 
-Igor: Yeah that I agree and that's why both LESS and ULC are not that high on the roadmap right now because it's a huge project on how to do the whole crypto economy balance that everyone can run nodes and somehow communicate and validate eacho ther, or maybe it's even worse than inferior.
+Igor: Yeah that I agree and that's why both LES and ULC are not that high on the roadmap right now because it's a huge project on how to do the whole crypto economy balance that everyone can run nodes and somehow communicate and validate eacho ther, or maybe it's even worse than inferior.
 
 Jarrad: I agree with both the workload and the secondary step, if there's the ability at least to expose the ability to run ULC even if you bring your own node, that would be a great step in the right direction.
 
@@ -356,7 +356,7 @@ Jarrad: That would be amazing. Let's not worry any further than that for now.
 
 Ricardo: I think some of the ULC improvements they can also be used for the mail servers improvements, getting rid of the mail servers, because it seems to solve the same problem, but instead of solving the story of messages, this is network, so kind of similar problem in my point of view.
 
-Igor: I don't see how, because essentially what is ALS is, ALS is normal ethereum client but with smaller receipt sizes that you download, you don't download all the data, only selected data, but still verified. ULC is the same as LESS, except verification of blocks code locally you call some RPC method to some other node that returns the hash or something.
+Igor: I don't see how, because essentially what is ALS is, ALS is normal ethereum client but with smaller receipt sizes that you download, you don't download all the data, only selected data, but still verified. ULC is the same as LES, except verification of blocks code locally you call some RPC method to some other node that returns the hash or something.
 
 48:00 - 49:00
 
@@ -366,7 +366,7 @@ Ricardo: Yeah I agree that there is this difference, in Ethereum you have this l
 
 49:00 - 50:00
 
-Oskar: Just on the topic of what differences between this and having your own remote or whatever, if you're running everything yourself it's just one to one and there's no difference, but this also opens up, because if you ULC you can have multiple nodes right, you can have semi trusted set up, maybe you have multiple friends, and lets say you have LESS service in dapp node you can connect to multiple and you don't need to trust anyone but it's still, if you check that 3/5 still return the same hash and you're still better off, so that type of racing you can't do if you just have someone else's remote servers, so it's slightly more sophisticated as well, which I think is the difference.
+Oskar: Just on the topic of what differences between this and having your own remote or whatever, if you're running everything yourself it's just one to one and there's no difference, but this also opens up, because if you ULC you can have multiple nodes right, you can have semi trusted set up, maybe you have multiple friends, and lets say you have LES service in dapp node you can connect to multiple and you don't need to trust anyone but it's still, if you check that 3/5 still return the same hash and you're still better off, so that type of racing you can't do if you just have someone else's remote servers, so it's slightly more sophisticated as well, which I think is the difference.
 
 Igor: Yeah that's fair.
 
@@ -402,13 +402,13 @@ Ricardo: This is a much more advanced in the roadmap in the sticker market the M
 
 Hester: So Teller Network or Sticker Market do you see relevance of arbitration anywhere else?
 
-Julien: In the case of sticker market, as Ricardo said we are considering using decoration market so I'm curious to hear if you think there is some kind of limitation of using decoration market specifically for using sticker market.
+Julien: In the case of sticker market, as Ricardo said we are considering using curation market so I'm curious to hear if you think there is some kind of limitation of using curation market specifically for using sticker market.
 
-Ricardo: It depends on how in the end the decoration market will look like, but in the general sense there is this limitation, because you can not take an action to change something in the decoration market, you can only create, maybe you can create a sticker market over a topic for example, but it kind of gets not consistent with the data set of the sticker market itself that says it has only one category. So the things should make sense in this case.
+Ricardo: It depends on how in the end the curation market will look like, but in the general sense there is this limitation, because you can not take an action to change something in the curation market, you can only create, maybe you can create a sticker market over a topic for example, but it kind of gets not consistent with the data set of the sticker market itself that says it has only one category. So the things should make sense in this case.
 
 56:00 - 57:00
 
-Ricardo: So maybe the decoration market would be used in the sticker market but in the sense of the ranking of better stickers, while the arbitration would be used to actually remove a sticker pack from the existence of the dapps. That I think is the difference.
+Ricardo: So maybe the curation market would be used in the sticker market but in the sense of the ranking of better stickers, while the arbitration would be used to actually remove a sticker pack from the existence of the dapps. That I think is the difference.
 
 Julien: Ok.
 
@@ -458,7 +458,7 @@ Jarrad: Yeah so depending on the regulatory climates, the jurisdictions we have 
 
 1:04:00 - 1:05:00
 
-Jarrad: However if we relicense under CC zero it basically waives everything in the public domain however it degrades into a very liberal license in the event that the law does not allow you to put code into the public domain. So in this case that would allow the community to take the source code and create a new source of truth, in which the GmbH would probably maintain a fork of and contribute to. So that requires the participation of every contributor that who's contributed to the codebase. So basically I wanted to see if there's any objections to that. You can mull it over. But then we have to go rounding up people and getting them to sign some basic paperwork allowing us to do that.
+Jarrad: However if we relicense under CC0 it basically waives everything in the public domain however it degrades into a very liberal license in the event that the law does not allow you to put code into the public domain. So in this case that would allow the community to take the source code and create a new source of truth, in which the GmbH would probably maintain a fork of and contribute to. So that requires the participation of every contributor that who's contributed to the codebase. So basically I wanted to see if there's any objections to that. You can mull it over. But then we have to go rounding up people and getting them to sign some basic paperwork allowing us to do that.
 
 1:05:00 - 1:06:00
 
@@ -468,7 +468,7 @@ Jarrad: That means you need to contact them and get their permission. Same thing
 
 Nabil: Does it have an impact on dependencies too?
 
-Jarrad: Not really, because basically we are licensed under MPL, MIT, and Apache. I think the predominant ones. They're all copyleft in some form, and CC zero is compatible with all that, and any way public domain is more so.
+Jarrad: Not really, because basically we are licensed under MPL, MIT, and Apache. I think the predominant ones. They're all copyleft in some form, and CC0 is compatible with all that, and any way public domain is more so.
 
 1:06:00 - 1:07:00
 
@@ -502,7 +502,7 @@ Oskar: I guess practically speaking we might have some issues with bounties and 
 
 1:10:00 - 1:11:00
 
-Oskar: On that note it would be useful to make sure that when we do the specifications and so on, the swarm templates are already CC zero but I don't know if there are other specification documents where this would be applicable as well.
+Oskar: On that note it would be useful to make sure that when we do the specifications and so on, the swarm templates are already CC0 but I don't know if there are other specification documents where this would be applicable as well.
 
 Jarrad: If we're seeing further into the future there's a very real possibility that the reference implementation will be a new code so it's not the end of the world if we can't do it with this one but it's definitely worth trying.
 
