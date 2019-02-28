@@ -4,6 +4,10 @@ Meeting Duration 1.5 hours
 YouTube Live Stream Link https://www.youtube.com/c/Statusim/live
 Livepeer Live Stream Link TBD
 
+## Transcript
+
+[Transcript](transcript10.md)
+
 ## Agenda
 
 1. Swarm Updates (15-30m)
@@ -53,22 +57,22 @@ b) react-native-desktop vulnerability (Corey)
 
 #### Teller Network
 - Last session brainstormed on user stories
-- Open questions to answer 
+- Open questions to answer
     - Crypto-fiat only?
-    - Using Teller Network to onboard new users 
+    - Using Teller Network to onboard new users
     - Dispute resolution, indicators of trust
     - Using DAI as base?
 - Basic working DApp for both mobile & desktop
     - User can buy a license to sell
-    - There is escrow 
+    - There is escrow
     - UI to query prices for escrow exchange
     - Support for multiple ERC20 tokens
     - Ability to rate transactions for seller ratings
-    - Working on UI for arbitration 
+    - Working on UI for arbitration
 
 
 #### Tribute to Talk
-- Starting UI work 
+- Starting UI work
 - Minor changes to mock-ups after design review; linked to "contact request" feature
 - Writing specs for contract to prepare for security audit
 - MVP: pay tribute with regular transaction, contract only used to register tribuets
@@ -77,7 +81,7 @@ b) react-native-desktop vulnerability (Corey)
 - Last week completed research & specs
 - Happy with mock-ups after design review
 - Open question:
-    - ERC721 will not be used in MVP. But is this something we want to use in the future? 
+    - ERC721 will not be used in MVP. But is this something we want to use in the future?
 
 #### DApp Store
 - Research phase running til end of month
@@ -89,7 +93,7 @@ b) react-native-desktop vulnerability (Corey)
         - Andy's proposal for bonded curves requires feedback
 
 #### Network Incentives
-- Continuing research 
+- Continuing research
 - Taking into account protocol research also happening
 - Looking for options more broad, and applicable beyond Whisper
 
@@ -116,12 +120,12 @@ b) react-native-desktop vulnerability (Corey)
     - User can create a delegate profile for a project
     - A delegate can fund projects
     - Can withdraw funds from a project
-- Now considering path to mainnet, security audit 
+- Now considering path to mainnet, security audit
     - Overlap with Giveth
 
 #### Janitors
 - Still in research phase
-- Request that swarm leads... 
+- Request that swarm leads...
     - Continue tracking hours in this spreadsheet: https://docs.google.com/spreadsheets/d/1P4zc6ODJGAY_ErnTHMyHvOSq6NHXnp9VxF3wP6yFPhQ/edit#gid=0
     - Keep Pivotal boards up-to-date
     - Provide work log in swarm repo/weekly updates on what the swarm has accomplished
@@ -149,15 +153,14 @@ b) react-native-desktop vulnerability (Corey)
 - For automation, task to automate upgrade on Android
     - First upgrading empty account
     - Next step is to automate an upgrade with real data
-- As usual, updating test cases for new features 
+- As usual, updating test cases for new features
 - Repetitive tasks for nightly testingitive tasks for nightly testing
 
 #### Research/Nimbus
 N/A
 
 #### Embark
-All related to Teller Network/DAO. Finding bugs that need fixing and having new feature ideas in developing these DApps. 
+All related to Teller Network/DAO. Finding bugs that need fixing and having new feature ideas in developing these DApps.
 
 #### Design allocation
 Hester shared an update on which designers are allocated to which swarms: [LINK]
-
