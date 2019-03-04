@@ -66,7 +66,7 @@ Document [here]() and in Discuss.
 
 (Anton) After conversation with Jakub, we are not able to stop building the apks for every PR.
 
-(Pedro) Only concern is the first point. I'm not really a Clojure dev so it might make things tougher for me. Hopefully writing tests in Clojure is easy to pick it.
+(Pedro) Only concern is the first point. I'm not really a Clojure dev so it might make it tougher for me to contribute. Hopefully writing tests in Clojure is easy to pick up.
 
 (Oskar) It isn't that bad, basically ;P
 
@@ -86,7 +86,7 @@ I.t.o where we are right now: mobile phase done a couple of weeks ago. We were a
 
 Once done, we can completely phase out the old way of doing things, merge the Nix branch and start using that exclusively.
 
-Does anyone have questions/roadblacks?
+Does anyone have questions/roadblocks?
 
 #### How did things go with the Android SDK?
 
@@ -94,7 +94,7 @@ Does anyone have questions/roadblacks?
 
 #### (Jacek) Do we lock down the versions that are installed?
 
-Nix works by cloning a specific tag of a given repo. With brew, it's the same thing. As long as we clone specific tag or commit SHA, then you know that they are locked down. If you want a newer version, you replace the SHA. If you want a specific version of one tool and another specific version of another tool, that is hard. But we mostly want to focus on locking down the build environment here.
+Nix works by cloning a specific tag of a given repo. With brew, it's the same thing. As long as we clone specific tag or commit SHA, then you know that they are locked down. If you want a newer version, you replace the SHA. If you want a specific version of one tool and another specific version of another tool, that is hard. But we mostly want to focus on locking down the build environment here, not so much of a handpicking tool versions.
 
 We could also have Status fork of the Nix repos (but not recommended). Or, in the recipe used to import Nix packages, you could possible fix that there.
 
@@ -104,7 +104,7 @@ Yes, basically. It must pull down exactly the same version that is committed on 
 
 Nix is even more powerful than Conan (which I used to build Windows for desktop), so in time we should probably replace that too (though they are built on the same philosophy and way of managing packages, which is cool. Nix is just one layer up, basically.)
 
-(Oskar) Anything else? There is now a transcript for the Dev call (thanks to a bunty!) if there is something you are looking for.
+(Oskar) Anything else? There is now a transcript for the Dev call (thanks to a bounty!) if there is something you are looking for.
 
 It's stored in the README [here]().
 

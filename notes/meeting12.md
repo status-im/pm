@@ -61,7 +61,7 @@ With both deleted chats and old PNs from blocked users (PR just merged), the PNs
 
 - Oskar: we tend to have too long-lived PRs. Previously we decided to use feature-flags much more liberaly, but it seems we have fallen out-of-practice with that.
 - Andrea P.: In some situations we don't want to use feature flags. When we near releases, testers are too busy testing the release, which leads to people adding code to existing PRs.
-- Julien: It becomes to do a good review on a huge PR.
+- Julien: It becomes hard to do a good review on a huge PR.
 - Pedro: there's a lot to be said about breaking PRs into smaller ones, since people will be more keen to act on a PR review if they antecipate it will take a short time. If we see that still doesn't work, we can try to diagnose where the bottleneck is.
 - Andrea P.: The system we have in place doesn't help the dev. We should relax rules for manual QA, since some PRs which have big impact are delayed before they reach `develop`.
 - Igor: agree we should relax manual QA rule on small PRs, otherwise we'll start having dozens on PRs in testing and be a bottleneck for QA.

@@ -84,7 +84,7 @@ Ricardo: About network incentivization, I think that this should be multiple thi
 
 Oskar: It is, if you want to join the calls we could talk about that more in detail, but yes that was a deliberate choice because we don't want to be tied to whisper when it comes to these things, but we can definitely talk about other methods, it would be best to do it in the swarm calls I think. At this point just want to get through the updates, then we can let everybody because we have 35 people on this call and we have these sort of two points in the agenda. We can add more stuff to agenda or we can talk about it in specific swarms as well to have it maximally useful. So core improvements and open core here?
 
-# Protocol/DAO
+# DAO
 
 14:00 - 15:00
 
@@ -97,6 +97,8 @@ Ricardo: So regarding the DAO I was already talking about that in the sticker ma
 Ricardo: The problem is that if I want to for example, there is this democracy running, then there is sticker market that is a new contract that will have new actions to be done by the democracies, to include these actions, I would have to pass a quorum to be able to create these topics. So in order to not have to do that I'm making it in a way that I can just create a new democracy just for sticker market, and that would have a parent democracy that would be this already running democracy, that people will vote or in this higher or lower democracy that will have a different quorum that if for example, if you want to maybe change some property you don't want to reach the qualified quorum like the absolute majority of influence, so that's my current stake on that. There is a lot of improvements in the proposal system. Like I can create this proposals without a democracy just for testing so that's it for democracy.
 
 # Better PR Process
+
+Document [here](https://notes.status.im/C5pj8g7gQOu9Wo8PtDZsMw#) and in [Discuss](https://discuss.status.im/t/better-pull-requests-process/1044).
 
 16:00 - 17:00
 
@@ -122,7 +124,7 @@ Anton: I had a short conversation with Jakob today and according to him we are n
 
 Oskar: Cool, does anyone disagree with these points or think they should be phrased differently or there's something missing from these things that we can do on a short-term?
 
-Pedro: My only concern is the first point where we have tests. Hopefully it's easy enough you know, I'm not a closures developer, I've been able to contribute to the closure code base, but yeah I'll have to look into how tests are written, it's not something I've put much thought into, hopefully it's something that is easy to pick up and won't be a blocker from now on.
+Pedro: My only concern is the first point where we have tests. Hopefully it's easy enough you know, I'm not a Clojures developer, I've been able to contribute to the clojure code base, but yeah I'll have to look into how tests are written, it's not something I've put much thought into, hopefully it's something that is easy to pick up and won't be a blocker from now on.
 
 20:00 - 21:00
 
@@ -130,7 +132,7 @@ Oskar: I would say it's fairly easy to write tests in close script, they're very
 
 Pedro: The important thing is to have a good reference of existing tests, like there's a single way that tests are implemented and that's the best way to do it, then we can use that as a reference, and that's good. If we don't have like two or three ways and only one of them is the correct way, that's the most important.
 
-Oskar: Cool, on that I imagine it would be sort of basic unit tests that Andrei is looking into, then I guess the third level would be the automated tests which sort of outside of closure for example and would be more about point-and-click and so on. Those are the three types of tests I imagine that wouldn't be manual. Does anyone disagree?
+Oskar: Cool, on that I imagine it would be sort of basic unit tests that Andrei is looking into, then I guess the third level would be the automated tests which sort of outside of clojure for example and would be more about point-and-click and so on. Those are the three types of tests I imagine that wouldn't be manual. Does anyone disagree?
 
 21:00 - 22:00
 
