@@ -86,7 +86,7 @@ With both deleted chats and old PNs from blocked users (PR just merged), the PNs
 - Hester: Eric has done a lot of good work implementing components, so hopefully these issues will be less and less as more things are componentized.
 - Barry: Components as laid out by designers in Figma is different than the way that developers implement them. Figma uses fixed styles.
 - Can we lay things out in Figma using Flexbox or percentages instead? (To-do: ask designers to follow up)
-- Eric: we need a way to sync on what components have been implemented, as I've seen components being implemented twice (not necessarilt the same aspects of it). We could do a separate call to sync up (Rachel will set it up).
+- Eric: we need a way to sync on what components have been implemented, as I've seen components being implemented twice (not necessarily the same aspects of it). We could do a separate call to sync up (Rachel will set it up).
 
 ### Protocol discussion and Q&A
 
