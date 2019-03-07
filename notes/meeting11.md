@@ -211,6 +211,7 @@ Some teams have expressed need for arbitration mechanisms. What are the needs, w
 - [jarrad] reference implementation will be new codebase anyway (probably)
 
 ### Blocking PRs with automated tests
+
 - [pedro] There was a period of time during pipeline of PR where we weren't checking if automated tests had been run
 - I fixed last week that a PR starts in a failed state, and automated tests changes that, which helps a lot
 - We need to change some things in the way the repo is set up.  Tried to do this with Jakub last week but we had issues, saw that we need to investigate further to step on other's shoes.
