@@ -36,7 +36,7 @@ Eric: I can do it. For the Tribute to Talk, the trot the chat swarm in general l
 
 Pedro: Ok, thanks Eric. And anyone next?
 
-#Dapp Store
+#DApp Store
 
 5:00 - 6:00
 
@@ -52,13 +52,13 @@ Iuri: So, I can go next.
 
 Pedro: Yeah.
 
-# Teller Network
+# Teller Network/Embark
 
 Iuri: So, for the Teller Network we are finishing and adding scroll workflow, a lot of other UI details here and there just to really excite the web application. We created the this data seeding system.     
 
 7:00 - 8:00
 
-Iuri: So, when we deployed the dApp or the contracts, they can do a bunch of actions automatically which makes it much easier just to see the dApp in action and instead testings more easily. We are going be deploying the dApps soon again a new version to Rinkeby. For the DAO, DAO basically going, when we are analyzing all the next steps that we're gonna takes towards the DAO and a lot more news on that next time. Embark we are what I want to say this we're kind of like in turbo mode, we're just like fixing any bugs we can find, we are going to release the beta this week with the idea of releasing next week the final 4 version. Also we are working on a new website, which should release next week as well.
+Iuri: So, when we deployed the dApp or the contracts, they can do a bunch of actions automatically, which makes it much easier just to see the dApp in action and instead testings more easily. We are going be deploying the dApps soon again a new version to Rinkeby. For the DAO, DAO basically going, when we are analyzing all the next steps that we're gonna takes towards the DAO and a lot more news on that next time. Embark we are what I want to say this we're kind of like in turbo mode, we're just like fixing any bugs we can find, we are going to release the beta this week with the idea of releasing next week the final 4 version. Also we are working on a new website, which should release next week as well.
 
 Pedro: Thanks, Iuri. Anyone up next?    
 
@@ -66,13 +66,13 @@ Pedro: Thanks, Iuri. Anyone up next?
 
 # DAO
 
-Ricardo: I can go, I'm working on dApp democracy, now I'm currently researching how I will implement the veto function and also there is a problem with allocation of essence not a problem, but a characteristic that is there is some balances that need to be removed from the total quorum, because there are like not actively been set of balances, they are locked balances. So, there is these two things that I'm working on dApp democracy. Also, I'm researching on Ethereum geth, I'm already started to update whisper version 6 from the version 3, that is returned geth to the 6, and with that I think should be easy to build something for Status in Ethereum geth if someone wants too.
+Ricardo: I can go, I'm working on dApp democracy, now I'm currently researching how I will implement the veto function and also there is a problem with allocation of essence not a problem, but a characteristic that is there is some balances that need to be removed from the total quorum, because there are like not actively been set of balances, they are locked balances. So, there is these two things that I'm working on dApp democracy. Also, I'm researching on Ethereum J, I'm already started to update Whisper version 6 from the version 3, that is returned J to the 6, and with that I think should be easy to build something for Status in Ethereum J if someone wants too.
 
 Pedro: Thanks, Ricardo. Anyone else?
 
 9:00 - 10:00
 
-Anna: Because Igor is on vacation, I can tell about Status Call. We have released the hotfix last week mainly it was about possibility to cancel the tinned mail server, so when you selected some mail server as your preferred one you was not able to unselect it, now you can, so if for some reason the mail server is not responding or whatever behavior in a wrong way, now you can just cancel and have the app to select any other mail server that is responding and behaving well.          
+Anna: Because Igor is on vacation, I can tell about Status Call. We have released the hot fix last week mainly it was about possibility to cancel the tinned mail server, so when you selected some mail server as your preferred one you was not able to unselect it, now you can, so if for some reason the mail server is not responding or whatever behavior in a wrong way, now you can just cancel and have the app to select any other mail server that is responding and behaving well.          
 
 10:00 - 11:00
 
@@ -80,7 +80,7 @@ Anna: Also, we added some changes to the bottom navigation in the mobile app, so
 
 # Nix
 
-Pedro: Yeah. Basically we're moving from our ad-hoc is setup where we download dependencies we need to the next package manager system, so this is been going on for I believe three or four weeks, now we're in the final stages before merging this to develop, we'll start testing soon.
+Pedro: Yeah. Basically we're moving from our ad-hoc system where we download dependencies we need to the next package manager system, so this is been going on for I believe three or four weeks, now we're in the final stages before merging this to develop, we'll start testing soon.
 
 11:00 - 12:00
 
