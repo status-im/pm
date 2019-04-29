@@ -38,7 +38,7 @@
 
 ### Teller Network
 - Finishing the escrow work flow and UI details
-- Created a ___ system which makes it easier to see and test the DApp
+- Created a data seeding system which makes it easier to see and test the DApp
 - Deploying new version to Rinkeby soon
 
 ### DAO
