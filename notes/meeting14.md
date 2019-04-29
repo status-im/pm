@@ -52,7 +52,7 @@ Ricardo - liquid democracy, token balances, Whisper J (version 6 from version 3)
 
 Anna - released hot fix last week mainly to "cancel" a pinned mail server (and opt back into automated selection). Also added changes to the bottom navigation in mobile - always visible now.
 
-Pedro - we're moving from our ad hoc build system where we download all dependencies we need into next package manager system. This has been on for 3-4 weeks now, we're in final stages before merging to develop. Testing soon. Last remaining items are fixes for Linux and Ubuntu 18. No impact on your existing environment, please to test. External developers are finding it easier to build.
+Pedro - we're moving from our ad-hoc build system where we download all dependencies we need to the Nix package manager system. This has been ongoing for 3-4 weeks now, we're in final stages before merging to develop. Testing soon. Last remaining items are fixes for Linux and Ubuntu 18. No impact on your existing environment, please test. External developers are finding it easier to build.
 
 Jacek - do you still like nix?
 
