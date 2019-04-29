@@ -1,4 +1,5 @@
-0:00 - 5:00
+### 0:00 - 5:00
+
 Oskar: any volunteers here. We have about 27 people here. Igor Igor do you want to take notes?
 Corey: I will take notes.
 Oskar: great thank you so much cool. Im are you live on YouTube yet ?
@@ -35,7 +36,7 @@ Julien: Right so there is this change that Ricardo did recently.  I think he sen
 
 Rachel: Okay.
 
-5:00 - 10:00
+### 5:00 - 10:00
 
 Oskar: Alright. Dapp Store.
 
@@ -61,7 +62,7 @@ Oskar: Awesome. Core Improvements. Is there anything outside of POC unicorn prep
 
 Igor: Yeah it was 1 11 0 release testing and things and we actually decided that after this discussion Disqus post to have a no-go for the current implementation of topic partitioning. We'll discuss it later but yeah that's just for the information. So we will not enable it in 0 11 0. That's all for me.
 
-10:00 - 15:00
+### 10:00 - 15:00
 
 Oskar: Cool. Right. I can do protocol briefly. Um I don't thing I mentioned something. So we had we had this panel in if you see a few weeks ago and that sort of work is ongoing to some more long-term mix that kind of based approach and we are trying to collaborate with with some more groups of people and so on and we're gonna have a call similar to the fm2 call quite similar to this call. As we discussed, it’s gonna be tomorrow and then we'll have it every other week. We'll see how it goes. And then there's been as some of you have seen, some sort of the data synchronization. Resource Log, I started a week or two ago with the goal of sort of taking a step back and looking at sort of existing literature when it comes to data replication and so on to sort of see all the various alternatives and try to categorize them and understand the trade-offs more in a better way. So I'll keep working on that and getting a better sort of comparison and then see what comes out of that. And then one sort of there's a better on say of that then resume proof of concepts and figure out a plan for getting it into Dapp. And if anyone has any comments or thoughts on that either here or we can do it in private.
 
@@ -83,7 +84,7 @@ Oskar: I'm curious, is there any plan or research around making sensors so so yo
 
 Julien: So it's not like the target we have is short term but it's definitely something we keep in mind so just to make sure that we don't introduce feature that would make this more complex. 
 
-15:00 - 20:00
+### 15:00 - 20:00
 
 Julien: So I think that there's nothing that prevents implementing the runtime in different languages because it's mostly data and then semantic applied to to this data and there is no our dependency on JavaScript for instance as of now. So we are definitely something that we keep in mind.
 
@@ -119,7 +120,7 @@ Oskar: Great. Thank you. All right cool so with that let's move into the first t
 
 Igor: I can do this. Basically a long story short, it used to be that the decision was made like way back when to use a single whisper topic for all the one to one messages and all the group chats because they're based on one-to-one messages and essentially the issue with that it's it's great for privacy because each node is downloading each other nodes traffic which is good because you can figure out who's talking to whom but the bad is yeah because each node is downloading each node’s traffic. 
 
-20:00 - 25:00
+### 20:00 - 25:00
 
 Igor: And I don't know we had this outage of the Hong Kong mail servers a while ago and before that we had an issue with traffic draining on East Berlin I guess it was. So it was all started roughly at East Berlin when we looked at this issue. And then yeah essentially we figured out that it's right now with our current user base is around like in on a normal day it's around 100 megabytes of private messages per day and each one has to download everything and that means that if we just if when we release if we will have like 10 times more users, it will means that each one will have to download the gigabytes of traffic per day just for private messages which doesn't look like a good idea. So we decided that we will need to somehow like target this. And one of the idea was like again it was a while ago. It was summer-ish PR from, I don't remember who was it like Roman or Andrea. There was a PR with I guess Andrea. The first PR.
 
@@ -127,7 +128,7 @@ Oskar: yeah
 
 Igor: Yeah. It was the first PR of like actually using the partition topic instead of like, essentially each each person will have a personalized list of topics he listened to based on his public key, in some in some way. And then this PR was wasn't it got some critical say and then it was like stopped and closed. And then after this issue with mail servers that was in December I guess. Then we decided to re like re-evaluate this and I created a post on Disqus about what do we want privacy or do we want like an efficiency out of traffic. And then this post didn't get any attention almost at all. And I guess one day Ricardo, Adam and Andrea were participating there. more or less. And then essentially we just figured out there we came to some kind of consensus how we want to build this partition topic. So without like we try to tell everyone about it. But again it was mostly ignored. And then yeah we decided to actually split this this topic. Went ahead and then we decided to split this into multiple releases. So the first release would essentially listen to this split topic and also to the old topic but never sent anything to it. And then the next major release which was what this one. Supposed to be this one. Supposed to start start writing on it. And then we also try to coordinate the comms. So that the old version 0, 9, 33 won't be able to receive like one-to-one messages from the newest one 0 11 0. So that's what we did and then essentially I wrote a post about post mortem about what why we did it. And then we got this feedback as well about the current implementation of partition topic isn't I mean it's not that bad but it's not the simplest one and it's not the simplest one to re-implement it other languages than JavaScript or Clojure script or anything that's compile to JavaScript. So we decided that we'll postpone this partition topic. And yeah we’ll essentially change the algorithm. We will still do this. And it will be a breaking change will that we'll probably try to split across multiple releases so it's not like just one release won't be able to talk to another but like release we'll be able to talk to one or two releases before that. But we'll do it in a more I'd say re-implementation friendly way, because yeah, it's a bit of a route decision and it's a little bit tricky to actually change it without breaking the backward compatibility especially if you if you don't have your nodes always online. So that's roughly it.
 
-25:00 - 30:00
+### 25:00 - 30:00
 
 Oskar: So I have a question on the backwards compatibility aspect which is like I was saying there's we don't think there's any way we could maintain backwards compatibility even though we have multiple devices on like it’s a because you could imagine that you that you you still have support sending of a discovery topic but once you discover another device is using the same topic than you would use that. 
 Is that something like that not feasible at all?
@@ -156,7 +157,7 @@ Ricardo: yeah yeah
 
 Igor: yeah right. That's the point of not wasting data and the second it doesn't solve the issue when you have one like you have two version like you say the desktop, it already supports it and then the mobile that doesn't. And they have the same key. And we don't have a client information. We just know that yeah we sent something to a public key and this public key might be like five devices with different versions. So which versions will you choose?
 
-30:00 - 35:00
+### 30:00 - 35:00
 
 Oskar: So maybe there is just two points right like one is like why we would want to have compatibility at all and I think this is a great opportunity to practice it and get better at it and like sort of figure out the testing and and the the scaffolding we need to make sure that we can sort of stay compatible because it'll only get harder as we move along. And then the second point on on like how like we do have some information about device syncing like you know which device you're syncing with. So it doesn't seem like, I understanf that you would require some additional work but it doesn't seem like it's impossible even though it's multi-cost space is on because we still have device information. And then on Eric's point with respect to the amount of data you wouldn't actually because if most people upgrade then it would be pulled into another topic.
 
@@ -178,7 +179,7 @@ Jacek: So why not for a second we go back to point that Igor made that we can be
  
 Igor: Yeah and I'm happy to discuss the possible solutions right now. Because so far one of the like I think pretty valid critiques that Andrea points out and I totally back is that people tell that, “ok you don't please don't do this”, and there is no essentially dialogue about, “oh there is another possibility”. It's very easy to just tell, “Okay. Never break compatibility.” So what are we going to do? So we have this protocol thing here that is realized on I mean it's obviously first an abstraction, like because we shouldn't use whispered topics directly in our protocol. Period. But that's another topic on this. So we have this very rude decision that was made for, yeah Eric recently wrote for probably reliability reason. So and that's yeah and we don't really have devices online all the time. So what are the good solutions how how others usually decide this in mostly asynchronous communication.
 
-35:00 - 40:00
+### 35:00 - 40:00
 
 Jacek: I think the first lesson here would be that every time protocol is designed, you need to think about the upgrade path ahead of time, to provide one. That makes your life so much easier and I think that's that's a little bit Oskar's point that we need to practice switching particles somehow and the classic way of doing that is designing the particle in such a way that that it can be upgraded right. So if we are introducing this breaking change, I think maybe a criteria for it would be that we we also see a past upgrade to the next one after that. And this then we could claim that this was like the last breaking upgrade with the world. Whatever right but that that's the kind of takeaway that I would love to see from any post mortem.
 
@@ -194,7 +195,7 @@ Oskar: So Andrea, you were mentioning the difference between group chat and one-
 
 Andrea: Yes like that to me like you know like we should just like the fundamental problem is that we use that system for device you  for multicasting. So anyone with a public key will be able to you know basically, no matter what client is using, no matter which version is able to decode those messages. And that's really is not upgradable you know essentially. Because you know like because it is embedded in this in whisper. So you know essentially like if you want to move to device to device basically sending, its gonna come at the cost of course because it means that you know like if someone you know it's the same as you see with group chat. So it's essentially now if you mean group chat, if you create a new device and you don't sync it and you are in a conversation or another group chat you want to receive those messages. 
 
-40:00 - 45:00
+### 40:00 - 45:00
 
 Andrea: So what we did is that there are techniques so that that information is propagated but that information which is similar to protocol negotiation. But the information needs to be propagated extensively. So there is the possibility of missing messages because you just spin up your device you and so like okay we're gonna move one way to do it is to move more towards device-to-device communication rather than this multicast by public key. And in that case yes you can use protocol.
 
