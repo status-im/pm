@@ -97,4 +97,31 @@ Eric: Nothing to say, its the same as tribute to talk we have worked 100% on tri
 Igorm: Yeah, thank you, cool, so the next one is Desktop but desktop was essentialy merged to the core team so except what we did for core improvements and core incentivzation, there’s also ongoing effort to bring mobile UI, Mobile codebase to desktop and then after that to bring pane view like we have on desktop right now to the mobile client that have big enough screen. That’s essentially for the desktop and then the wallet and key card ?
 
 25:39-
-Guylouis:
+Guylouis:Yeah, I can make an update for keycard first, yeah so we have now done rebuild with all the features for the keycard integration, it’s currently being tested and we’ve raised several issues already so that’s follow up on that I mean most of the issues are user experience related. On the good side, Andreas 26:08 SDK for keycard and is helping to merge the integration of keycard in geth. We’ve been working on the point of sales concept for the past two weeks so we now have a new keycard API that allows a point of sale use cases and the new implementation of the applet and then goes with this new API and the goal is to make during this build week a proof of concept of point of sale transaction with keycard.
+
+The work on ledger, I mean integration of keycard 26:50 is on hold because we need some ledger nano x samples and we still don’t have them and what else ? we also have some suspicion of other issues with the cardss which we are mitigating from a software standpoint and we are dealing with 27:10 of the chip on the card to better understand the situation.
+
+Yes, that’s for the keycard, for wallet is Goran here? 
+
+27:23- 27:53
+Goran: Hi, from onse side we have restarted quality design PR so right now I’d appreciate if you could  give you the PR that brings the redesigned for the main wallet sent flow which after successful merge should be followed up by the same thing for effort at in depth transactions. so hopefully we’ll finally get this merged. Thanks. 
+
+27:54-29:19
+Igorm: Cool,thank you and so are there any, oh yeah probably security and devops are the ones that, no Corey,  Jakub ?
+
+Jakub: Can you hear me ?
+Igorm: yes
+Jakub: all right, I guess from the major things that are happening, we’re switching to victor ops for paging people when there’s problem with infrastructre I mean that’s part of the effort to essentially have a proper setup for the call so we can go in turn fix our infrastructre in cases of any emergencies and I’m actually working on that right now. other than that, the main thing I;ve been focusing on last weekend together with Pedro are Nick’s changes because we are changing quite a lot but this should improve the build process by huge margin and its gonna be both deterministic and reproducible on all environments and I think we’re pretty close, we’re almost there, the last remaining thing is getting the fast lane changes going and I think Pedro is almost there so that’s the main thing really. 
+
+29:20- 31:08
+Igorm: Yeah, Thank you, Is there anything from the security standpoint ?
+Petty: yeah, trilobites retainer is officially started, we have, they’re focusing on three main things right now, one is looking at starting off thing at the contracts with tribute to talk and sticker market and then they’ll move on to whatever next is prioritized on our release schedule there, we’re also setting up, they’ve finally gotten their tooling to work natively with embark so I mean anybody using embark can have trilobites tooling built into the pipeline that should do checks when they are developing stuff. We’re currently building a tutorial that’s we’re gonna announce here on discuss for everyone to join who does any smart contract work so they can figure out how to integrate that in there quickly and the last thing is, at least the next one that they are working on is probably Dapp curation and I’m setting up like an organizational process that I hope will be a mandatory process for any new project to ping the security team at certain points during their project status initially, once initially so that they can get help assess risk to what they’re doing and then that also informs us and trilobites on how to move forward in terms of how much attention they should be getting based on the project and then the other least second mandatory ping is when they’re winding down to start getting the security team to have a look at it and do audits or whatever necessary based on the project.
+
+31:09- 31:57
+Igorm: cool, thank you, is there any other team that I forgot, maybe QA ?
+Anton: Yes basically we’ve been the same keycard for last week and for this week we are going to focus on exploratory testing and wallet pairs and also from automated testing I’m focused on bridging IOS tests running, it’s a way like android do we get free open source accounts from browser stack today and I believe that by the end of this week we will get first set of sanity tests for IOS. That’s it.
+
+Igorm: Cool Thank you, is there any team I forgot to host, any swarm that I forgot to ask ? Okay, so then we have a few topics, one is the post that Oskar wrote about the bootstrap node diversity, is there anything you want to discuss there Oskar.
+ 
+Oskar: yeah, I guess I just saw 
+
