@@ -123,5 +123,46 @@ Anton: Yes basically we’ve been the same keycard for last week and for this we
 
 Igorm: Cool Thank you, is there any team I forgot to host, any swarm that I forgot to ask ? Okay, so then we have a few topics, one is the post that Oskar wrote about the bootstrap node diversity, is there anything you want to discuss there Oskar.
  
-Oskar: yeah, I guess I just saw 
+Oskar: yeah, I guess I just saw so for context this is something that came out of the chaos unicorn day and just a super brief recap what happens is that how we can shut down, when we shut down our cluster then our users can’t use status but it’s fairly easy to recover when it comes to bootstrap nodes so the actual nodes used to discover dressel on network and so on, so we’re very close to actually being pure peer to peer in that respect so it’s something that’s very simple and there’s lots if cool things we can do in terms of making of decentralized selection of these nodes and so on but what I want to do with this topic and discuss is essentially what the simplest things we could do such that if we have the next chaos unicorn day, people can still actually connect to your network because and I think we are very close and it requires like some very small changes to actually make it impossible for us to shutdown basic communication. So my initial suggestion is very straightforward is to increase diversity of bootnodes, not just of cluster nodes but we include maybe some other core contributor add in other people’s nodes in this sort of static list and that we include it in status go because if we do that then even if a cluster shuts down you can still sort of connect to the network so that’s my specific suggestion maybe people have any faults on that and maybe people have other ideas of simple things we can whereby simple things I mean something that can be done in like a day essentially.
+
+34:12-34:34
+Ricardo: So I would like to run a node, can be a boot node main server not just for my own but if other people want to use but I have a problem that is every time my internet connection is reset my IP address changes so there is a problem with that or how can we solve dynamic IPs.
+
+Oskar: Yes that’s a good point, in that case that’s a problem for being included in concept so that would be an additional so yeah requirement I guess for being included in this basic list would be that you have a static IP, if you don’t then as you say you need some kind of dynamic method. There are some ways to do that under which I listed how bitcoin justice there are some bad ideas for doing it in a firm as well that’s based on dns and so on. I don’t know but I feel like there’s some way we can do that as well but it might require bit more work.
+
+Igorm: Yeah, what I thought that it’s pretty, the first node is really tricky ones to discover and they need to have some guarantees because as soon as you have these boot nodes things then you can discover other even dynamic nodes on dynamic gear but for the first few…
+
+Oskar: Yes I mean it’s a solved problem in peer to peer like Bitcoin solved it and talks solved it so it’s not like it doesn’t require crazy research anything like it’s a known problem in peer to peer applications.
+Igorm: yeah, since we already have some version of that and code incentivization that’s going into status go fairly soon fairly soon but in a special fleet maybe we can adopt it somehow like but it uses a smart contract registry to get an additional nodes from somewhere.
+
+Oskar:  Well yeah, lying some smart contracts is that, then you have the bootstrap problem because how do you get to the blockchain if you don’t have boot nodes to blockchain so it’s kind of like a catch 22, if you rely on it for the initial bootstrap
+
+Igorm:  Yeah but then you can just think about just adding them to our JSON configuration files because if someone can run a node with the static IP for instance I can run my own digital ocean I still keep writing it from the chaos unicorn day and we can just add you know its node id
+because it won’t change IP or anything, it’s a virtual machine and I think a few other nodes from the core contributors would be cool so  maybe we can just gather people who want to run nodes more or less permanently and then just have a one PR to add them to pass aditional ones to our fleet files.
+
+Ricardo: So there is a difference from state of vision in these other peer to peer networks is that we don’t want full decentralization so I know that the DNS is really good and I think that it's it's not removing DNS because it's centralized but perhaps allowing multiple solutions and also maybe make it easy to implement your own extension that can allow a different type of boot nodes discovery so maybe if someone else figure out new anyway it's easy to just in this way 
+
+Dean : So one idea I’ve heard of recently or was discussing with someone was if you can remove the need for static IPS and have a let's say an identifier for a boot node and if that boot node is not available the nearest neighbours answer. I don’t know how viable that solution is or if it’s entirely possible possible but that might be an interesting path to look into whereas we don’t have a boot node list whereas an id space and anything within that space or the closest neighbour to that space answers the requests to join the network.
+
+Ricardo : so my IP address it changes but it's in a certain range so maybe I could register my IP in a more abstract way and then maybe they can ping me and  try to find me within that range my internet provider.
+
+Eric: no but the …
+Dean :  So instead of going through IPs you go through a node ID and if that node ID is not available the nearest available neighbor to that node ID would respond to the request. it's something that I was recently looking into I don't know if it's possible but I'm gonna like try and expand on that research.
+
+Igorm: But where will the packets go to the first, like are these so will it require some kind of I don’t know sending like messages everywhere to see who replys.
+
+Dean: yeah so hence I don't know if it's very efficient or possible 
+Eric: To me it sounds something swarm team is investigating or I think I’ve heard about something similar for PSS delivery.
+
+Ricardo: Eric, do you think that swarm feeds could help in this or its awesome then you we have good nice problem for fleet.
+
+Eric: to connect to the network no
+
+Oskar: So must build in Go ether right and they have the same , its built on dev p2p so you have the exact same booting up start, the only difference has a different network ID and a different capability so it might help in terms of discovery once you are in the general ethereum network but it doesn’t use a different as far as I know it doesn’t use a different bootstrap mechanism than goeth any p2p ethereum protocol as far as I know.
+
+Igorm: Yeah and you still have this zero like the empty state problems because I mean there's not many ways of how can you solve it you can have something like a DNS relay or something like this because unless you have at least one peer, the first peer, you can’t really talk to blockchain well unless you have been fewer or something like that because we don’t want to rely on the other fewer and that’s because..
+
+Eric:  we want to peer 2 peer , the first one should either be hard coded or discovered by DNS which is also kind of hardcoded.
+
+Ricardo: so there is also that the visualization of decentralization and also about the other thing that is decentralization in daenerys just missed the word distribution, so a distributed network or a decentralized network so maybe if the boot nodes they cause this centralization but it’s actually centralize in this boot nodes so maybe we could look forward  in a more distributed way and everyone is a bootnode and maybe somehow that information of your neighbourhood that you’ve seen recently are stored in your device and then you can try them.
 
