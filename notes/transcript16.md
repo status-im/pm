@@ -166,3 +166,174 @@ Eric:  we want to peer 2 peer , the first one should either be hard coded or dis
 
 Ricardo: so there is also that the visualization of decentralization and also about the other thing that is decentralization in daenerys just missed the word distribution, so a distributed network or a decentralized network so maybe if the boot nodes they cause this centralization but it’s actually centralize in this boot nodes so maybe we could look forward  in a more distributed way and everyone is a bootnode and maybe somehow that information of your neighbourhood that you’ve seen recently are stored in your device and then you can try them.
 
+42:32-
+Igorm: Well that’s I mean everything is much less of a problem when you already connected to it and you have some history but everything is the biggest problem if you like status network is down, everything is down, you don’t know anything you install the app and start it and what do you do then ? I mean you can always have full scan of IP ranges or something similar to that or you can have hardcoded data inside but otherwise if you don’t connect to any peers you can’t get blockchain data because you …
+
+Ricardo: Yeah I don’t really see that that is an issue, in case of the new user because maybe for that user we can provide a way for that user could like tap the phone of their friend which is in the network and download the bootnodes or some other way they can download through email that from someone so they find another way of finding the new user so I think the problem we need to solve is for the users that are currently not work not being disrupted by any event of a shutdown so if I am already in the network and already know the nodes that are randomly online, maybe I can have better chances on still becoming online.
+
+Igorm: Yeah but that sounds like a more long term plan though but yeah as a long term plan it might be interesting to few
+
+Eric: I think what Ricardo has imagined is what you can… the most important is that there is no disruption for current users and for the new ones in case the network is disrupted it’s just a matter of finding an easy way to share from a usera user that is already connected so like we have with QR codes which I want you to join the network and status’ not going to exist any more, I just along with my contact code I give you a boot node so you can join the network and then there is probably way enough nodes to sustain your good nodes need in the future from the network of users itself.
+
+Ricardo: Yeah that’s what was my idea.
+
+Igorm: Okay
+
+Oskar: So since because there is something broken in design, it was probably a hack but right now when you add a custom boot node you have to restart the app which implies that there is some special thing where you add this node and that’s what you use to connect to network as it was just appending into an array because it should be adding it to some list and then the same thing will be the case that's what you guys just said that when you connect other nodes you can use them as boot nodes potentially and just add it to a list and like it shouldn't have to restart the app or anything ideally, like I'm not sure why it's restarting that
+
+45:30-
+Ricardo:  maybe it's restarting the gas or the state 
+
+Oskar:  there’s something about the state there maybe there’s some specific reason why its like that but it seems to be broken.
+
+Igorm: Yeah it seems like more like about to the real reason because you can add peers at any point without restarting the home nodes so it’s a bit weird why these peers are treated separately
+
+Ricardo: Yeah it maybe its because its not using the RPC common, its editing the configuration file and then it needs to restart sometime.
+
+Eric: Yeah I think it’s more for ..
+
+Oskar: Is Adma or Dimitry online maybe ? no ? 
+
+Igorm: I mean they still add like they still end up in more or less the same place as the notes that you had with the RPC so it doesn't matter where it reads yo can read the empty list from the config and then add stuff later on.
+
+Eric:  yeah it's probably just a matter of instead of just changing the config for for simply adding a node using their RPC command.
+
+Igorm: Yeah, something like that but yeah it’s probably just a oversight on the geth design.
+
+Eric: I think it’s terrible because for once I suspect it was web3 oriented for 3 months now try to remove web3 and use direct calls to use to the RPC interface so it should be easier now.
+
+47:15-
+Igorm: Cool so should we move to the next one, I guess the next topic is 
+
+Oskar: sorry one question on if there’s some security considerations, availability considerations so let’s say that we gather this list of additional static nodes so first of all does that expose us to any specific type of attacks and secondly it's a problem if certain notes are just half available.
+
+Igorm: You know the second is probably not big of a deal but the first one  I can see that if let’s say like the default boot nodes aren't working but these nodes are working and are all malicious then they can end up with either DOSing or just plainly if we use like blockchain or so they can point to only malicious nodes in the future so that’s probably that you will end up with this but that's probably it needs to be a threat model so that’s from the tip of my head.
+
+Oskar: my intuition would be that if it's something that we gate keep a bit with github peer process that even if you get like you I don;t think you would be that exposed to eclipse attacks but yeah we useful to just have a sound check out of core, what's your gut feeling right now ?
+
+Eric: My gut feeling is it's not any different than anything else we could do it's I don't see anything extra based on what's been discussed here that would expose us anything that anything else wouldn't expose us to.
+
+Igorm: hmm
+Ricardo: So how a node can be identified as an attacking node, it would be delivering messages from like invalid messages or message that are not interesting to anyone in..
+
+Igorm: Yeah that one I mean can always spam Network somehow it can just not do anything to help with communication so that's why and not return any other peers that can do that so it's essentially a denial of service attack and then and probably spend the public chat rooms because well again and then this is too obvious once one on one conversations will probably be safe if you know you have been talking to the right people before, so its a..
+
+Ricardo: Yeah I said that we could probably have some kind of reputation of each node takes care of not something in chain but locally and then if some attack happens they just connect to the nodes they have a good history.
+
+Oskar: That’s how I think that's’ how p2p works to do it there I think eclipse attack vectors there are some basics like that to make sure that you can’t show nodes and so on but that’s more about dynamic adding as opposed to static bootstrap phase I think.
+
+Igorm: Yeah I think I had so far just keeping it with the PR process might be good enough for now especially if it’s just good nodes the ones that just supposed to help discover the you don’t wait for them to be a whisper node or to be whatever node it just only helps with peer discover if I understand p2p correctly.
+
+Petty: Yeah is that process laid out somewhere ? It’s not just the actual code itself that have a spec sheet that explains the process of how it does this local behavior of furiously check nodes 
+
+Igorm: so this you mean the discover itself Or..
+
+Petty: Dev p2p like how it handles those ? 
+
+Igorm: Probably there is something but it’s all the jobs on devp2p its …. are a bit spotty at some topics so that’s why the idea I mean  I guess that’s why it’s peer to peer right because it’s much better documented attempt. 
+
+Yeah
+
+Igorm: So I don’t know, I know that for discovery specifically there is derive few specs and for dev p2p it’s essentially just a messaging like we have for the status spec. That’s all this message means this or something like this I don’t know if it’s but peer discovery, it’s one of the topics to take a look at and how the nodes helps with it.
+
+Igorm: should we talk about the repository of repositories ? Oskar ?
+
+Oskar: That was just an announcement I got a bunch of questions of where to find some repositories and it’s kind of hard to find out yourself unless you know what your repository is if you look it up  you can search stuff is bit annoying so just made this lists of list so if you have a bunch of repositories  that are grouped by something then feel free to add them there and yeah it’s just a list, that’s all.
+
+52:58
+
+Igorm: Yeah.
+
+Oskar: I just copied a bunch of bots and I added all the protocol ones so you can look there if you're not sure of what you look.
+
+Igorn: Yeah, that’s actually a good idea because sometimes it’s very hard to see because we hook a lot of forks and these forks don’t really need so you usually don’t need them IRL but yeah some useful things.
+
+Oskar: Yeah on that note  Goran had a good session as well like if you are owning any repositories and they can  be thrown away and you can just I mean one idea is to do some spring cleaning so you can just archive old repositories because right now we have over 300 repositories, 460 code repos so it’s quite a lot of them.
+
+Eric: Does it include the repository about repositories ? :D
+
+Igorm: Laughter .. :D
+
+Ricardo: Yeah and I have a repository who’s name is contracts that actually have a lot of su projects inside of it so for example there’s an identity inside of there and I’m planning to spawn it into a new repository because some people find it difficult to find it inside of that repository because you need to look into the branches and yeah so there may be we can have your list so if the subcategories that is maybe the apps then things that I only maybe research on contracts so that
+
+Ricardo: Yeah so that whatever there that’s great I would love to just be able to go there and then just search for in it and find whatever or anything and find relevant stuff that would be great.
+55:00-
+Igorm: yeah cool, so yeah but we should mention this in front of repo in the repo of repos. okay then the next one is that I wanted to talk about a little bit is that just again we had this with retrospective from the chaos unicorn day and yeah there is a link to what exactly was there like the notes and actionable next steps I guess we have all the steps claimed so it's just more or less for your information but we decided that first of all we want to keep doing chaos unicorn day and do it like roughly every quarter so it's important and it might affect everyone but I think it's it was a very good learning experience for us and see how far are we from getting like a real p2p and decentralized messenger. Yeah so that was probably the big one and the other more technical details are in this probably what do you are interested in is the actionable next steps and these documents to see what's there yeah that's that's what I want to bring up also just for information.
+
+Oskar: I guess for people who weren’t there in the retrospective and maybe if you have looked it up is this something else you like to address or do people have any other thoughts on it ? right ?
+
+Ricardo: I think working well and better than I expected and I also.. it seems to work better when I run my mail server like the app is faster so we are going through the effort right direction this chaos unicorn day and we should do it more times.
+
+Eric: For me it was annoying because it showed our development of some features is really relying on the production environment like testnet was really like wallet related features were really undoable at the time.
+
+Oskar: I have a question so do we have any people who would identify as non-technical on the call if you could talk briefly about your experience.
+
+Eric: I sthe devcall really a place for it ?
+
+Oskar: Uh that’s true but I feel like that was the voice that we didn't hear a lot from and and it's probably a different experience so you write this it's maybe a bit but it would be useful for us to hear.
+
+Eric: I know for sure from the chat calls that Hesther Rachael managed to to connect quite easily like we were actually talking on instead of during the day.
+
+Ricardo: so they use the…. other people no ?
+
+Oskar: Rachel and Hesther are you here ? allright.
+
+Eric:  Basically I can say that they followed the gist that was made by Jack and used his main server like probably half of status at least.
+
+Hesther: Sorry I got lost in browsers, yeah I would just to recap I was set up on mobile in ten minutes time maybe desktop took longer but more to do with reinstalling desktop which I've had issues around before but setting up the mail server thanks to Jeff was very straightforward.
+
+59:30-
+Igorm: Great so are there any topics that people want to bring up that weren’t reset. So if no then thank you everyone 
+
+Oskar: Sorry what .. One question is if we should have it or if its bad timing for people with I guess there's some kind of holiday
+
+Igorm: Oh yeah I figured it out 
+
+Oskar: would people prefer to have it anyway I don’t know it’s  there’s
+ so in two weeks there’s some kind of holiday Easter okay 
+
+Igorm:Yes Easter Monday according to my calendar but do people prefer to either skip it completely or to just have it as a I don't know venue to talk just to have this call but whoever works will join without like real structure or we can skip it completely so let's put it like this we have a chat room so if you if you think that we should keep it then put a plus sign there if we think we should skip put a minus sign and yeah so its a , then we will confirm it.
+
+Ricardo: This happened before from whether you remember people didn't join it the so I was waiting for anyone to join but no one joined.
+
+Oskar: I think the difference is that was a big holiday like that was new year’s eve or something you stay.
+
+Ricardo : yeah exactly 
+
+Eric: not related to the holidays but I was wondering where in the first part of this meeting where we do this sync up wouldn't be more efficient too since it's like right only part of the call maybe we could remove that and replace it by extreme doing that like writing 4-5 lines about their current progress and like all team members agree and then we have a summary of it and maybe people can read it before the call and so if they have questions regarding this then they they can ask during the call but the sync itself can be done before hand.
+
+Ricardo: yeah I agree with you I think that that is exactly this call meeting should be more about like people presenting ideas on what they  need to share with others maybe because they need something for example I'm developing this multi-sig and I need a next way to to load the contact list because if I want to add in new owners to my multi-sig I need to copy paste from it's difficult and I want it to just select the contacts from status for example and I think should be something about these about talking about the ideas we want to share our vision about status or vison of a specific swarm that needs thorough feedback from others and  we have a lot of follow up calls for example I'm not actually late for a call now and I'm just going to give the follow-up from from what I did exactly the same that I told here but more detailed so yeah that was it.
+
+Eric:  so yeah that was it so yeah I stand it up in the in the notes but yeah the idea that it still provides a few lines about the progress and we make summary that is shared before the meeting people read it and instead of this time I rotated to sync up there would be follow-up questions progres some other teams if there is a crystal issues or whatever.
+
+Oskar: Ricardo is there a reason that that agenda doesn't work in terms of adding stuff to that done before.
+
+Ricardo: what I didn’t understand the question sorry 
+
+Oskar: Is there a reason that the agenda format doesn’t work like github issue if you just have specific things you want to talk about 
+
+Ricardo: oh no, I think that that's it's okay like you or the day a demand what what we need but I agree with Eric that I don't see any point of having a meetup sorry a sync like in this shot, just that we should like use we should like use this time for discussion of visions  and what we should do actually not with you well not we don't should not stop what we did but what we should do in this call and let the follow ups for the specific swarms.
+
+Oskar: so what we said before is that we wanted updates to be forward seeking and so letting people know if there's something like a decision to be made or something like this so like something that’s happened since town hall that's relevant for other people to know, do people disagree with that ?
+
+Eric: sorry can you repeat ?
+
+Oskar:  that update should be only if there's something that's new since Town Hall that you think other people should know about and that sort of points to some kind of decision that's relevant for everyone in the column.
+
+Eric: well for me I would still stick to a written form of that so if nothing has happened there is relevant since that there is relevant since that town hall then you shouldn't write anything in your sync but I think everything should be just in written form and people prepare the meeting should be like four to five minutes read and and then they can questions for during the call.
+
+Ricardo: Yeah That’s a good idea.
+
+Igorm: yeah by the way so for the voting in the chat room so if no one will interfere right now we’ll have a meeting on next meeting without skipping but it just who will who will work will join is if that's everything, if that's okay with you then okay cool I see more definitely more plus signs than minuses so great so then with this updates it's yet it's always a tricky thing I mean if we if we just write it then why even like write it for this call I mean . so let's yeah but it might be good point to discuss how not to make it redundant with town hall updates as well because there are updates anyway.
+
+Eric: Well the thing is this call the updates can be more technical and yeah so that would be the difference you may be some details matter for instance if some wallet flows have changed might affect the sticker market and tribute to talk team or that kind of stuff 
+
+Ricardo:  yeah exactly good point Eric that's that's the kind of changes we should talk know not only but anything that that affects others our interests or of others because for example I’m developing specific features on inside of the multi-sig you are it doesn't matter for for other because I’m experimenting with that and anyway if I have something that is cool enough to be shown or it's interesting interesting to other people then I will bring here.
+
+Igorm: Okay so that makes sense, so then its more technical updates here okay let’s keep it that so yeah so I think then we can wrap it up and see if anyone wants to discuss something this call will probably stay open for a little bit for a little while but I guess for those who aren’t don’t have anything to discuss right now feel free to just.. Thanks for joining the meeting today 
+
+Rachel: Thanks guys, happy build week.
+
+Hesther: Thank you everyone, enjoy your week.
+
+
