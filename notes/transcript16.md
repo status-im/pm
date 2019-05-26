@@ -1,11 +1,8 @@
-#To Add
-##Formatting  + end part
-
 0:00 -1:00
 igorm: yeah but let’s wait for maybe a minute or two for more people, just telling us right now, to actually start
 
 1:00 -1:00
-igorm: So yeah, thanks everyone for joining, I’ll lead today’s core devcall and let’s sstart with the notetaking. Eric would you mind taking the notes, I’ll share the link to the chatroom.
+igorm: So yeah, thanks everyone for joining, I’ll lead today’s core dev call and let’s start with the note taking. Eric would you mind taking the notes, I’ll share the link to the chatroom.
 
 Yeah cool, thank you and here today we don’t have a very long agenda so let’s start with a short swarm update and I can start with the network incentives where we started doing first proof of concept where we actually, you can register>>>>2.17>>>
 
@@ -32,7 +29,7 @@ Igor: Now, I thought Barry was asking to share his screen for token economics. B
 Igor: Cool, thank you. The teller network, Iuri ?
 Iuri: Alright can you hear me first of all?
 Igor: Yep
-Iuri: Good morning, first in regards to the dao stuff, we (are) working on creating a project, listing a project, recieve a notice to create a target profile, reject the commit by delegate, for the teller network, we work on the escrow URA  and also fix some workflows in regards to releasing pumps , when one introduction, when the settlement was made. We fixed various issue related to the screen size. We improved the rating system as well. We fixed the data seeding system, that’s done and it works, we converted the Dapp to use the create react app, great together with the part 4 and we also improved the screen warning the user when a ATM provider was not available.
+Iuri: Good morning, first in regards to the dao stuff, we (are) working on creating a project, listing a project, received a notice to create a target profile, reject the commit by delegate, for the teller network, we work on the escrow URL  and also fix some workflows in regards to releasing pumps , when one introduction, when the settlement was made. We fixed various issue related to the screen size. We improved the rating system as well. We fixed the data seeding system, that’s done and it works, we converted the Dapp to use the create react app, great together with the part 4 and we also improved the screen warning the user when a ATM provider was not available.
 
 I can put one in embark too.
 Igorm: Yep, Thank you
@@ -45,12 +42,12 @@ Igor: Hey Ricardo do you have any update for the Democracy ?
 
 Ricardo: Hey, so you were missing me, yes regarding the democracy i had some so I basically I work around the contracts to kind of evolve them because I’m seeing the spec of it so I’m still working on some aspects of it of the governance you know, how it works but then I wanted to start to make the UI but you lean more about Javascript and React and embark, I started to make a multisig that is a very simple application in something that I need so I’m currently working on the multisig and so both of them, then I go back to the contracts of topic democracy so its a...I’m still unsure about all the details but yeah I’m just going to first make the first network configuration so you can set your who you delegate to and later would make it in a way that you can approve, dorry you can vote for approval to reject and also to create proposal ofcourse and yeah that would be then my next steps on top democracy and that’s it.
 
-9:34
+9:34-13:10
 Igor: Thank you. So yeah now I guess barry and token economics.
 
-Barry: Yeah, real quick I’ll share my screen, can you all see it ? Yes Okay, we started a notebook just to figure out you know what are the value drivers of you know ether because, well for one its a big thing, its something that status relies on in a lot of ways right, one  and a big part of our treasury is denominated in ether which as we could see can impact our long term plans based on market gyrations but also the security of the network that we are building a lot of our applications on top off is dependent on ether having long term value but when you look around there’s really not much out there or research being done into what exactly makes you know where ether’s going to derive its value from so this is sort of an investigation, something we started looking into and thinking about and exploring and I just want to put this notebook out there and people stresss test some of these ideas because there’s definately things that we probably are missing and this is not even this is far from a complete model so we really just want to kind of stress test these ideas but I’ll just leave you all with a couple of quick insights that we have so far and maybe in the coming weeks people can expand on this and help drive this research forward but you know in short one thing that we hear pretty often is that ethereum is gonna have all these different industreis and replacments built on top of it, you know ranging from financial services to arbritration, legal and beacuse of that you should expect Eth to be very valuable in the future, but you know if we look at that for example, here’s for example one transaction that took place where 1 million dai was wiped in the maker protocol which is built on top of ethereum but if we look at the value it accrued in this one transaction there was 1 mkr that was burned, because it was burned that’s roughly equivalent to 700 something dollars that accrued to the maker protocol and a transaction fee which was roughly equivalent to 9 cents but then that’s not something that was  burnt that’s something that went to the miners so that is something that gets recirculated so you have to divide that by the velocity that Eth has which we talked about in a previous presentation what velocity means but this is basically a value pool of one penny to Eth and 770 dollars to Maker in this one transaction that happened on the network. So you know just because all these services are being built on top of ethereum doesn’t mean the vast majority of that value is gonna accrue to eth, it may actually end up accruing to eth protocols being built on top of ethereum.
+Barry: Yeah, real quick I’ll share my screen, can you all see it ? Yes Okay, we started a notebook just to figure out you know what are the value drivers of you know ether because, well for one its a big thing, its something that status relies on in a lot of ways right, one  and a big part of our treasury is denominated in ether which as we could see can impact our long term plans based on market gyrations but also the security of the network that we are building a lot of our applications on top off is dependent on ether having long term value but when you look around there’s really not much out there or research being done into what exactly makes you know where ether’s going to derive its value from so this is sort of an investigation, something we started looking into and thinking about and exploring and I just want to put this notebook out there and people stress test some of these ideas because there’s definitely things that we probably are missing and this is not even this is far from a complete model so we really just want to kind of stress test these ideas but I’ll just leave you all with a couple of quick insights that we have so far and maybe in the coming weeks people can expand on this and help drive this research forward but you know in short one thing that we hear pretty often is that ethereum is gonna have all these different industries and replacements built on top of it, you know ranging from financial services to arbitration, legal and because of that you should expect Eth to be very valuable in the future, but you know if we look at that for example, here’s for example one transaction that took place where 1 million dai was wiped in the maker protocol which is built on top of ethereum but if we look at the value it accrued in this one transaction there was 1 mkr that was burned, because it was burned that’s roughly equivalent to 700 something dollars that accrued to the maker protocol and a transaction fee which was roughly equivalent to 9 cents but then that’s not something that was  burnt that’s something that went to the miners so that is something that gets recirculated so you have to divide that by the velocity that Eth has which we talked about in a previous presentation what velocity means but this is basically a value pool of one penny to Eth and 770 dollars to Maker in this one transaction that happened on the network. So you know just because all these services are being built on top of ethereum doesn’t mean the vast majority of that value is gonna accrue to eth, it may actually end up accruing to eth protocols being built on top of ethereum.
 
-13:10-
+13:10-14:08
 And then There’s just so, most likely the value driver for eth itself is going to be transaction fees over time and I think this is an important thing in terms of understanding in terms of security we basically just took the history of the dollar value of these transaction fees over time, Just a couple of quick interesting facts about that they’ve been growing since inception at a rate of about 700% a year however, so far, 2019 is the first year since ethereum’s inception is that transaction fee growth is on track to be negative so we’re on to so far things could change but so far this year the growth in transaction fees dollar value is actually on track to be a negative growth rate from what we had in 2018.
  
 14:09-15:44
@@ -61,13 +58,13 @@ Igrom: Thanks for the great presentation, so
 
 Ricardo: So I want to give some comments on what Barry told. Regarding the proof of stake, obviously they usage of staking is that you will produce blocks but the blocks they probably don’t give any reward, the reward is only by the transactions and also if you think about the each  value what is the value of ether is actually the power of processing transactions in this decentralized system and so if we achieve scalability in Ethereum, it means that one ethere can do more and therefore it should be more valuable, not thinking about the price, I’m thinking about the value each ether have for me because each ether I have in my wallet is able to change the state of ethereum and that’s the value.
 
-Barry: So I would leave you with one thought on what you just said, if we we have scalabilty and one ether can do more, has more transactional capacity then wouldn’t the avaerage wallet be actually need to hold less ether because they can do more transactions with less ether.
+Barry: So I would leave you with one thought on what you just said, if we we have scalability and one ether can do more, has more transactional capacity then wouldn’t the average wallet be actually need to hold less ether because they can do more transactions with less ether.
 
 Ricardo: Yes they need to buy less, they don’t need to buy many, yeah that makes sense. 
 
 Eric: But if scalability means that there is more use cases for which ether is used then you know it may be the offer and demand balance and the value stays the same I mean depends on.
 
-Ricardo: Yeah because it causes less demand because you need less Ether to make a transaction, less demand to ether but at the same time when you have one ether you have more power then to make more transactions. SO its a complex scenario that we are going to get. I don’t understand the outcome but seems like moon 
+Ricardo: Yeah because it causes less demand because you need less Ether to make a transaction, less demand to ether but at the same time when you have one ether you have more power then to make more transactions. So it's a complex scenario that we are going to get. I don’t understand the outcome but seems like moon 
 
 Igorm: Later on because you had the topic, right now it’s more of a short sync up that at least was envisioned before, but if you want to continue discussing then we can just like discuss it in the end of the meeting if you’re okay with that. Just to keep it a bit, this part a bit short, everyone is present. Cool, yeah thank you. so yeah, let’s continue with the protocol research, Oskar do you have something to say ?
 
@@ -76,12 +73,12 @@ Protocol Research
 -21:02
 Oskar: Yeah sure, so let’s see, last week, continuance of the doing another iteration of the peer to peer data sync comparison survey paper that we’re building up, I was subtly looking into various types of discovery methods things are looking that we have setup a basic static website that roughly outlines the phases and so on and of the work that’s being done, its big brother is specs the basic static github page. We’re also documenting the current protocol and just not sending PR requests there in the specs repository that Adam’s working on. Priest any feedback on that one ? And then we also had a call with Swarm and a PSS team to say of what the path to getting that into the app or protocol at some point would look like as well as if there’s some kind of collaboration with mix that research and so on and then this week, some people are working on build week but we are doing a brief sort of proof of concept for PSS and feeds. We are gonna have sort of our bi-weekly call tomorrow with web free messaging with the whole team as well and then keep working on discovery and documenting the current protocol as well as exposing JSON RPC through some, this is also part of moving the protocol from closure to go so it’s more self contained and so on. That’s it for me.
 
-21:03-
+21:03-23:11
 
-Igor: Cool, Thank you Oskar and next core improvements forum and the latest weeks were mostly about the incode so first of all we did release the support it, then we were also looking at how could we fight the unicorn  I think it was pretty succesful. In there so and then like except the unicorn day. Yeah we also completed some plain maintenance like we upgraded react native in the application c couple of times. Then techniques was merged as well I guess because in the previous call it wasn’t yet which was a huge change and right now there are two follow ups there that helped to improve the whole building pipeline and yeah, a lot of small things under the hood of the application. Maybe not so much visible on the UI level but the, and the biggest one that we are working on right now is to load missing messages from the chatroom which is essentially, which is a big thing because we only load for the traffic reason, we only load 24 hours especially all the private messages so if you happen to join the chat or if you happen to let’s say not go to status, not keep it open over the weekend, you probably will on monday you will lose all the information that was posted on saturday which sometimes looks like a box so we are aiming to fix this as soon as possible.So that’s what we’re working on. So that’s what’s cool improvements. So I guess Dow was already said by Iuri so let’s Janitors, anyone from janitors want to say something? and if not then we can switch to the teams and the core browser team, are there any updates there ?
+Igor: Cool, Thank you Oskar and next core improvements forum and the latest weeks were mostly about the incode so first of all we did release the support it, then we were also looking at how could we fight the unicorn  I think it was pretty successful. In there so and then like except the unicorn day. Yeah we also completed some plain maintenance like we upgraded react native in the application c couple of times. Then techniques was merged as well I guess because in the previous call it wasn’t yet which was a huge change and right now there are two follow ups there that helped to improve the whole building pipeline and yeah, a lot of small things under the hood of the application. Maybe not so much visible on the UI level but the, and the biggest one that we are working on right now is to load missing messages from the chatroom which is essentially, which is a big thing because we only load for the traffic reason, we only load 24 hours especially all the private messages so if you happen to join the chat or if you happen to let’s say not go to status, not keep it open over the weekend, you probably will on monday you will lose all the information that was posted on saturday which sometimes looks like a box so we are aiming to fix this as soon as possible.So that’s what we’re working on. So that’s what’s cool improvements. So I guess Dow was already said by Iuri so let’s Janitors, anyone from janitors want to say something? and if not then we can switch to the teams and the core browser team, are there any updates there ?
 
 23:12- 24:14
-Oskar: briefly if there’s no one from janitors, I can just there was this survey about and process and tools and so on that went out I think last friday and part of that is also that we are looking to potentially using this rike tool that Jared presented last time well so if you haven’t filled out the process survey please do and a reason for that is because that there’s a tendency to sort of keep adding tools like we have github and we have different product ports and labels and pivotal tracker and so on and we’re going to make sure that whatever tools we use are most useful so if there are tools that people find annoying and so on then we can remove them. So if you’re bothered by some tool, the process or you think something’s are working great then please let us know so we can streamline the process and remove any bits of work and keep just minimal set of tools neccesary to streamline work, that’s it. 
+Oskar: briefly if there’s no one from janitors, I can just there was this survey about and process and tools and so on that went out I think last friday and part of that is also that we are looking to potentially using this rike tool that Jared presented last time well so if you haven’t filled out the process survey please do and a reason for that is because that there’s a tendency to sort of keep adding tools like we have github and we have different product ports and labels and pivotal tracker and so on and we’re going to make sure that whatever tools we use are most useful so if there are tools that people find annoying and so on then we can remove them. So if you’re bothered by some tool, the process or you think something’s are working great then please let us know so we can streamline the process and remove any bits of work and keep just minimal set of tools necessary to streamline work, that’s it. 
 
 
 24:15- 24:48
@@ -90,21 +87,21 @@ Rachel: I think that the fiddle update that Julien shared and the build we kick 
 
 Igorm: Cool yeah thank you and then the core chats ? 
 
-24:49-
-Eric: Nothing to say, its the same as tribute to talk we have worked 100% on tribute to talk closely last week.
+24:49-25:00
+Eric: Nothing to say, it's the same as tribute to talk we have worked 100% on tribute to talk closely last week.
 
-25:01-
-Igorm: Yeah, thank you, cool, so the next one is Desktop but desktop was essentialy merged to the core team so except what we did for core improvements and core incentivzation, there’s also ongoing effort to bring mobile UI, Mobile codebase to desktop and then after that to bring pane view like we have on desktop right now to the mobile client that have big enough screen. That’s essentially for the desktop and then the wallet and key card ?
+25:01- 25:38
+Igorm: Yeah, thank you, cool, so the next one is Desktop but desktop was essentially merged to the core team so except what we did for core improvements and core incentivization, there’s also ongoing effort to bring mobile UI, Mobile codebase to desktop and then after that to bring pane view like we have on desktop right now to the mobile client that have big enough screen. That’s essentially for the desktop and then the wallet and key card ?
 
-25:39-
-Guylouis:Yeah, I can make an update for keycard first, yeah so we have now done rebuild with all the features for the keycard integration, it’s currently being tested and we’ve raised several issues already so that’s follow up on that I mean most of the issues are user experience related. On the good side, Andreas 26:08 SDK for keycard and is helping to merge the integration of keycard in geth. We’ve been working on the point of sales concept for the past two weeks so we now have a new keycard API that allows a point of sale use cases and the new implementation of the applet and then goes with this new API and the goal is to make during this build week a proof of concept of point of sale transaction with keycard.
+25:39- 27:22
+Guylois: Yeah, I can make an update for keycard first, yeah so we have now done rebuild with all the features for the keycard integration, it’s currently being tested and we’ve raised several issues already so that’s follow up on that I mean most of the issues are user experience related. On the good side, Andreas 26:08 SDK for keycard and is helping to merge the integration of keycard in geth. We’ve been working on the point of sales concept for the past two weeks so we now have a new keycard API that allows a point of sale use cases and the new implementation of the applet and then goes with this new API and the goal is to make during this build week a proof of concept of point of sale transaction with keycard.
 
-The work on ledger, I mean integration of keycard 26:50 is on hold because we need some ledger nano x samples and we still don’t have them and what else ? we also have some suspicion of other issues with the cardss which we are mitigating from a software standpoint and we are dealing with 27:10 of the chip on the card to better understand the situation.
+The work on ledger, I mean integration of keycard 26:50 is on hold because we need some ledger nano x samples and we still don’t have them and what else ? we also have some suspicion of other issues with the cards which we are mitigating from a software standpoint and we are dealing with 27:10 of the chip on the card to better understand the situation.
 
 Yes, that’s for the keycard, for wallet is Goran here? 
 
 27:23- 27:53
-Goran: Hi, from onse side we have restarted quality design PR so right now I’d appreciate if you could  give you the PR that brings the redesigned for the main wallet sent flow which after successful merge should be followed up by the same thing for effort at in depth transactions. so hopefully we’ll finally get this merged. Thanks. 
+Goran: Hi, from one side we have restarted quality design PR so right now I’d appreciate if you could  give you the PR that brings the redesigned for the main wallet sent flow which after successful merge should be followed up by the same thing for effort at in depth transactions. so hopefully we’ll finally get this merged. Thanks. 
 
 27:54-29:19
 Igorm: Cool,thank you and so are there any, oh yeah probably security and devops are the ones that, no Corey,  Jakub ?
@@ -138,7 +135,7 @@ Igorm: yeah, since we already have some version of that and code incentivization
 Oskar:  Well yeah, lying some smart contracts is that, then you have the bootstrap problem because how do you get to the blockchain if you don’t have boot nodes to blockchain so it’s kind of like a catch 22, if you rely on it for the initial bootstrap
 
 Igorm:  Yeah but then you can just think about just adding them to our JSON configuration files because if someone can run a node with the static IP for instance I can run my own digital ocean I still keep writing it from the chaos unicorn day and we can just add you know its node id
-because it won’t change IP or anything, it’s a virtual machine and I think a few other nodes from the core contributors would be cool so  maybe we can just gather people who want to run nodes more or less permanently and then just have a one PR to add them to pass aditional ones to our fleet files.
+because it won’t change IP or anything, it’s a virtual machine and I think a few other nodes from the core contributors would be cool so  maybe we can just gather people who want to run nodes more or less permanently and then just have a one PR to add them to pass additional ones to our fleet files.
 
 Ricardo: So there is a difference from state of vision in these other peer to peer networks is that we don’t want full decentralization so I know that the DNS is really good and I think that it's it's not removing DNS because it's centralized but perhaps allowing multiple solutions and also maybe make it easy to implement your own extension that can allow a different type of boot nodes discovery so maybe if someone else figure out new anyway it's easy to just in this way 
 
@@ -166,7 +163,7 @@ Eric:  we want to peer 2 peer , the first one should either be hard coded or dis
 
 Ricardo: so there is also that the visualization of decentralization and also about the other thing that is decentralization in daenerys just missed the word distribution, so a distributed network or a decentralized network so maybe if the boot nodes they cause this centralization but it’s actually centralize in this boot nodes so maybe we could look forward  in a more distributed way and everyone is a bootnode and maybe somehow that information of your neighbourhood that you’ve seen recently are stored in your device and then you can try them.
 
-42:32-
+42:32- 45:29
 Igorm: Well that’s I mean everything is much less of a problem when you already connected to it and you have some history but everything is the biggest problem if you like status network is down, everything is down, you don’t know anything you install the app and start it and what do you do then ? I mean you can always have full scan of IP ranges or something similar to that or you can have hardcoded data inside but otherwise if you don’t connect to any peers you can’t get blockchain data because you …
 
 Ricardo: Yeah I don’t really see that that is an issue, in case of the new user because maybe for that user we can provide a way for that user could like tap the phone of their friend which is in the network and download the bootnodes or some other way they can download through email that from someone so they find another way of finding the new user so I think the problem we need to solve is for the users that are currently not work not being disrupted by any event of a shutdown so if I am already in the network and already know the nodes that are randomly online, maybe I can have better chances on still becoming online.
@@ -181,7 +178,7 @@ Igorm: Okay
 
 Oskar: So since because there is something broken in design, it was probably a hack but right now when you add a custom boot node you have to restart the app which implies that there is some special thing where you add this node and that’s what you use to connect to network as it was just appending into an array because it should be adding it to some list and then the same thing will be the case that's what you guys just said that when you connect other nodes you can use them as boot nodes potentially and just add it to a list and like it shouldn't have to restart the app or anything ideally, like I'm not sure why it's restarting that
 
-45:30-
+45:30 - 47:14
 Ricardo:  maybe it's restarting the gas or the state 
 
 Oskar:  there’s something about the state there maybe there’s some specific reason why its like that but it seems to be broken.
@@ -202,7 +199,7 @@ Igorm: Yeah, something like that but yeah it’s probably just a oversight on th
 
 Eric: I think it’s terrible because for once I suspect it was web3 oriented for 3 months now try to remove web3 and use direct calls to use to the RPC interface so it should be easier now.
 
-47:15-
+47:15 - 52:57
 Igorm: Cool so should we move to the next one, I guess the next topic is 
 
 Oskar: sorry one question on if there’s some security considerations, availability considerations so let’s say that we gather this list of additional static nodes so first of all does that expose us to any specific type of attacks and secondly it's a problem if certain notes are just half available.
@@ -240,7 +237,7 @@ Igorm: should we talk about the repository of repositories ? Oskar ?
 
 Oskar: That was just an announcement I got a bunch of questions of where to find some repositories and it’s kind of hard to find out yourself unless you know what your repository is if you look it up  you can search stuff is bit annoying so just made this lists of list so if you have a bunch of repositories  that are grouped by something then feel free to add them there and yeah it’s just a list, that’s all.
 
-52:58
+52:58 - 55:00
 
 Igorm: Yeah.
 
@@ -257,7 +254,9 @@ Igorm: Laughter .. :D
 Ricardo: Yeah and I have a repository who’s name is contracts that actually have a lot of su projects inside of it so for example there’s an identity inside of there and I’m planning to spawn it into a new repository because some people find it difficult to find it inside of that repository because you need to look into the branches and yeah so there may be we can have your list so if the subcategories that is maybe the apps then things that I only maybe research on contracts so that
 
 Ricardo: Yeah so that whatever there that’s great I would love to just be able to go there and then just search for in it and find whatever or anything and find relevant stuff that would be great.
-55:00-
+
+55:00-59:29
+
 Igorm: yeah cool, so yeah but we should mention this in front of repo in the repo of repos. okay then the next one is that I wanted to talk about a little bit is that just again we had this with retrospective from the chaos unicorn day and yeah there is a link to what exactly was there like the notes and actionable next steps I guess we have all the steps claimed so it's just more or less for your information but we decided that first of all we want to keep doing chaos unicorn day and do it like roughly every quarter so it's important and it might affect everyone but I think it's it was a very good learning experience for us and see how far are we from getting like a real p2p and decentralized messenger. Yeah so that was probably the big one and the other more technical details are in this probably what do you are interested in is the actionable next steps and these documents to see what's there yeah that's that's what I want to bring up also just for information.
 
 Oskar: I guess for people who weren’t there in the retrospective and maybe if you have looked it up is this something else you like to address or do people have any other thoughts on it ? right ?
@@ -282,7 +281,8 @@ Eric:  Basically I can say that they followed the gist that was made by Jack and
 
 Hesther: Sorry I got lost in browsers, yeah I would just to recap I was set up on mobile in ten minutes time maybe desktop took longer but more to do with reinstalling desktop which I've had issues around before but setting up the mail server thanks to Jeff was very straightforward.
 
-59:30-
+59:30- 1:09:00
+
 Igorm: Great so are there any topics that people want to bring up that weren’t reset. So if no then thank you everyone 
 
 Oskar: Sorry what .. One question is if we should have it or if its bad timing for people with I guess there's some kind of holiday
@@ -335,5 +335,3 @@ Igorm: Okay so that makes sense, so then its more technical updates here okay le
 Rachel: Thanks guys, happy build week.
 
 Hesther: Thank you everyone, enjoy your week.
-
-
