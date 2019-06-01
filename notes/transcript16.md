@@ -689,34 +689,18 @@ Eric: sorry can you repeat ?
 
 Oskar: that update should be only if there's something that's new since Town Hall that you think other people should know about and that sort of points to some kind of decision that's relevant for everyone in the column.
 
-  
-
 Eric: well for me I would still stick to a written form of that so if nothing has happened there is relevant since that there is relevant since that town hall then you shouldn't write anything in your sync but I think everything should be just in written form and people prepare the meeting should be like four to five minutes read and and then they can questions for during the call.
-
-  
 
 Ricardo: Yeah That’s a good idea.
 
-  
-
 Igorm: yeah by the way so for the voting in the chat room so if no one will interfere right now we’ll have a meeting on next meeting without skipping but it just who will who will work will join is if that's everything, if that's okay with you then okay cool I see more definitely more plus signs than minuses so great so then with this updates it's yet it's always a tricky thing I mean if we if we just write it then why even like write it for this call I mean . so let's yeah but it might be good point to discuss how not to make it redundant with town hall updates as well because there are updates anyway.
-
-  
 
 Eric: Well the thing is this call the updates can be more technical and yeah so that would be the difference you may be some details matter for instance if some wallet flows have changed might affect the sticker market and tribute to talk team or that kind of stuff
 
-  
-
 Ricardo: yeah exactly good point Eric that's that's the kind of changes we should talk know not only but anything that that affects others our interests or of others because for example I’m developing specific features on inside of the multi-sig you are it doesn't matter for for other because I’m experimenting with that and anyway if I have something that is cool enough to be shown or it's interesting interesting to other people then I will bring here.
-
-  
 
 Igorm: Okay so that makes sense, so then its more technical updates here okay let’s keep it that so yeah so I think then we can wrap it up and see if anyone wants to discuss something this call will probably stay open for a little bit for a little while but I guess for those who aren’t don’t have anything to discuss right now feel free to just.. Thanks for joining the meeting today
 
-  
-
-Rachel: Thanks guys, happy build week.
-
-  
+Rachel: Thanks guys, happy build week. 
 
 Hesther: Thank you everyone, enjoy your week.
