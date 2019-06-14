@@ -72,5 +72,44 @@ Ricardo:  Yeah, I'm doing so more research on (inaudible) because I have two typ
 Igor: Yeah, Thank you Ricardo, then then I guess we would do some teams update so for the new core UI is there anyone to talk about ? Looks like there isn’t one 
 
 Oskar: Is (inaudible) or Rachel here ?
-Igor: No I don’t see neither of them,
+Igor: No I don’t see neither of them, I’ll ping Andrea next time probably specifically
+
+Oskar: so just for conext for other people, Core UI is the merging of wallet dapp and chat team into one as well as owning profile and onboarding these specifics for people that are not aware.
+
+Igor: Yeah yesterday I’ve seen Andrea  was creating a lot of tasks related to onboarding, I guess that’s the main goal for them at least for now.
+
+Hester: yeah, maybe to add to that so yes onboarding had a design review end of last week  and we discussed handoff implementation can start this morning, next profile changes is something being worked on as far as I know but we do have some tweaks to make to the design there, I as far as I know those are the big buckets of things going on now.
+
+## Keycard
+
+13:57- 17:37
+
+Igor: great ! cool and the last team like I just call is essentially whatever is core improvements doing so it was already set and now I guess the keycard team.
+
+Guylois: Yeah so for keycard on the Android upfront Dmitri and the test team are working hard to fix a list of bugs that the test team has found during the initial testing of the first MVP app, this will still take a couple of weeks to finish and after that we will need to implement the changes that are coming from the new onboarding flow, on the ledger side, still struggling with getting samples, this is a bit tough here, there’s been some changes in the ledger SDK with regards to how UI is done on the ledger and the mickleA is implementing them. 
+
+And apart from that, Keycard team is also focusing on the multi account feature in the wallet, so we’ve had two or three calls now to kick-off the multi account work, we are in definition phase, we have defined what is the scope of work  what we want to do what to do, what work we’re not currently doing is writing the user stories, so that’s a design we can work on that and also listing the development tasks, with regards to scope, very quickly so that everyone knows what we have in mind that what we’re trying to do for Q2, so the impact is on the wallet side only, we will introduce only later all the matters about the security policy, key-pair and all the specific use cases of key-pairs for dapps and chats like unique keys for dapps and chat group. 
+
+So basically the scope is in wallet , we want the user to be able to create several wallet accounts either on the status hd tree so and either automatically or by manually entering the path they want to use on these tree, we want the user to be able to import any key pair with its private key so outside of our tree of course. We want the user to be able to watch any public address so these are watch only accounts from the wallet and we want the user to be able to export any key-pair also and of course we want the user to be able to browse and explore through these different accounts meaning being able to have another view of all these accounts, get into the details of the specific account and chose from which account they send the transaction from. 
+
+So that’s the scope of what we have in mind and what we are currently writing user stories for. Yeah that’s it for me.
+
+# Discussions on Topics chosen during the meeting
+
+17:38 - 
+Igor: Yeah cokol, thank you, thank you for the update and is there anyone who I forgot to mention, a team or any swarm? so I guess that’s it then. So are there any more topics anyone wants to discuss right now ?
+
+Ricardo: I think that some interesting topics that we could discuss is about gas abstraction in the gas relayer because keycard also implemented that in Hackathon, Julian is asking me about that so to implement this is not exactly gas abstraction but to pay the gas for the users in way to first make easier the onboarding of new users and also the discussion about identity  that is connected to these points and also the discussion about separating the wallets from the shared identities. So I think these topics are important  to be discussed together to be implemented for this change or near changes especially because of keycard and how keycard mentions it I think that separating wallet from the shared key would make things better for keycard and also this would make things easier to implement as an identity contract to make the gas layer possible so I think these topics these are kind of connected and for that I think a good step would be to start thinking in how we can separate a density, sorry the shout in the chat, I think that would be the first thing we need to, I know that this is an ongoing topic for a long time, so I think first big question would be how is this stages of this it’s been working on and there are pull requests about this.
+
+Igor: There is a similar topic that we just discussed about the keycard right ? so its about the separation of ..(inaudible)
+
+Guylois: Yeah, I mean yes within the multi account discussion, well basically about the chat keys, obviously since status needs to work with keycard, what we would need is that the main chat key is not going to get different from the main wallet key, so this will be implemented meaning in particular that on  onboarding or when the user start using status, we need to be made aware that these chats are made with a different key-pair than the wallet so that when he gets some funds on his wallet key pair through kudos or anything else, you get them in another wallet so yes I’m saying he needs to be aware, it needs to be discussed maybe all this can be automatically done in the background for him but basically yes, we’re going to have a different chat keeper, but the other thing we said is that we have not prioritized the fact to use one unique key-pair per chat context at this stage just for planning reasons. That’s what we discussed in terms of specific usage of chat key pairs. 
+
+Igor: Yeah I guess then status go technically it already supports different keys for whisper and for like a serial node but yeah I guess..
+
+Guylois: I don’t know if Andreas is here but he’s really the one that’s worked on this, not sure he’s here because he had to be away from keyboard for an hour but basically yeah Andreas did implement separation of the whisper key and the wallet key and is now working on the, evaluation the efforts on the go status go side when we need several I mean when we need several keypairs for several accounts.
+
+Ricardo: So the current key that we use on the migration would be the wallet key and the we will have a new chat key or will be the reverse ?
+
+Guylois: Yes that’s the way you said it, the wallet key does not change 
 
